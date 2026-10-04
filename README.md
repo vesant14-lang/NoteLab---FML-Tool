@@ -105,10 +105,6 @@ it is not silently shown as equivalent editable blocks.
 
 ## Important limits
 
-Audio is disabled for this public build, including imported-file audition.
-The shared audio implementation remains in the source for other FML hosts;
-changing saved preferences cannot reactivate it in Note Lab.
-
 Preview is **not the game engine**: it does not execute arbitrary mod scripts
 or simulate every exported block. The interface reports coverage. An export
 passing structural re-reading is not a certification of in-game execution.
