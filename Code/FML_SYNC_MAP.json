@@ -1,0 +1,427 @@
+{
+  "product": "Note Lab",
+  "version": "1.0.3",
+  "purpose": "Path mapping for reviewing changes against the FML snapshot. Include paths differ in this standalone layout.",
+  "files": [
+    {
+      "standalone": "src/Tutorial.hpp",
+      "fml": "NoteLab/src/Tutorial.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "src/SpriteEditor.hpp",
+      "fml": "NoteLab/src/SpriteEditor.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "src/SpriteShapes.hpp",
+      "fml": "NoteLab/src/SpriteShapes.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "src/NewNote.hpp",
+      "fml": "NoteLab/src/NewNote.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "core/NoteResources.cpp",
+      "fml": "src/fml_notelab/NoteResources.cpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "core/NoteResources.hpp",
+      "fml": "src/fml_notelab/NoteResources.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "core/NoteMediaEmit.hpp",
+      "fml": "src/fml_notelab/NoteMediaEmit.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "src/ModResources.hpp",
+      "fml": "NoteLab/src/ModResources.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "tests/PublicMediaCases.hpp",
+      "fml": "NoteLab/tests/PublicMediaCases.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "src/BlockCanvas.cpp",
+      "fml": "NoteLab/src/BlockCanvas.cpp",
+      "baseline_sha256": "84873ab9e10105dbc1b53360ec51e953cd679a5908f42e76133bead4b3748da3"
+    },
+    {
+      "standalone": "src/BlockCanvas.hpp",
+      "fml": "NoteLab/src/BlockCanvas.hpp",
+      "baseline_sha256": "7febdccd7c0efebdc5e170932673c6b156cfd4141036868ab54b6984645032dd"
+    },
+    {
+      "standalone": "src/Branding.hpp",
+      "fml": "NoteLab/src/Branding.hpp",
+      "baseline_sha256": "6237102e6650e215d6a386f6958e8dae51020ffd4e5a8cfa5d31dcee94fe13d0"
+    },
+    {
+      "standalone": "src/BuildPolicy.hpp",
+      "fml": "NoteLab/src/BuildPolicy.hpp",
+      "baseline_sha256": "39360c98650e995cbbd370b63a25f281cd545d3cc1b0de013f8fff2d0c5cb727"
+    },
+    {
+      "standalone": "src/CodeEditor.hpp",
+      "fml": "NoteLab/src/CodeEditor.hpp",
+      "baseline_sha256": "5f0527b87450a7f216202a4f8fdf268d4f619e9acf942189e4250207f5bb74e5"
+    },
+    {
+      "standalone": "src/CustomCreator.hpp",
+      "fml": "NoteLab/src/CustomCreator.hpp",
+      "baseline_sha256": "c07564ec354d15892d69c9e79dd128f640ea8d8f9df94800e81c4081b0c64ccd"
+    },
+    {
+      "standalone": "src/main.cpp",
+      "fml": "NoteLab/src/main.cpp",
+      "baseline_sha256": "e2da75fce8f1358bae119469dcb3bae24d475a9af7625a1055dfa5215db0f709"
+    },
+    {
+      "standalone": "src/SongTools.hpp",
+      "fml": "NoteLab/src/SongTools.hpp",
+      "baseline_sha256": "3f2c241566a8851ba153b04eff5ed5dc2208f8acb381032768cda356b0c621dd"
+    },
+    {
+      "standalone": "src/StyleComposer.hpp",
+      "fml": "NoteLab/src/StyleComposer.hpp",
+      "baseline_sha256": "1aa26c4a9a3ad8dd30ce5d6a4e47490454bdda624eb9f1a1eec6923c4fddb2f0"
+    },
+    {
+      "standalone": "src/Theme.hpp",
+      "fml": "NoteLab/src/Theme.hpp",
+      "baseline_sha256": "f87adf300e4f69123183c52d784b2bd1b4fb35343167e1042b756c65e32aa886"
+    },
+    {
+      "standalone": "support/audio/AudioEngine.cpp",
+      "fml": "src/fml_audio/AudioEngine.cpp",
+      "baseline_sha256": "837744f794e64714a6a4254be04506920d5864dade443698ef1ba44fcc6b0f86"
+    },
+    {
+      "standalone": "support/audio/AudioEngine.hpp",
+      "fml": "src/fml_audio/AudioEngine.hpp",
+      "baseline_sha256": "3cebbac6bbffd748042e05c2ea8276fd9cbca6976065b4cfc7b9dec1a0a6971c"
+    },
+    {
+      "standalone": "support/core/Chart.hpp",
+      "fml": "src/fml_core/Chart.hpp",
+      "baseline_sha256": "3a1eb27913397ed4d458d0987effa863639659e53761d286d657e08d92739118"
+    },
+    {
+      "standalone": "support/core/CreativeFx.hpp",
+      "fml": "src/fml_core/CreativeFx.hpp",
+      "baseline_sha256": "87de55fbf79a02e448072e5d0148fe2e7f1952551d94dedc48aed3e37811789d"
+    },
+    {
+      "standalone": "support/core/Diagnostics.hpp",
+      "fml": "src/fml_core/Diagnostics.hpp",
+      "baseline_sha256": "d2a52722e62a531cc94bdc6c3f590f125041e751c2aa6200aa68562f8c074d61"
+    },
+    {
+      "standalone": "support/core/Hash.cpp",
+      "fml": "src/fml_core/Hash.cpp",
+      "baseline_sha256": "a1cf082784c167bf65f2520335053ac7869935d76e0c4dfa572c004a17370924"
+    },
+    {
+      "standalone": "support/core/Hash.hpp",
+      "fml": "src/fml_core/Hash.hpp",
+      "baseline_sha256": "42c766b939e6e50f3b9ffe21474098196db7425e27741af0c0ea1af28447dea2"
+    },
+    {
+      "standalone": "support/core/Model.hpp",
+      "fml": "src/fml_core/Model.hpp",
+      "baseline_sha256": "9406c9fa671063ae2ceca599574b476a91c05259128606bd86c71c3351f626ec"
+    },
+    {
+      "standalone": "support/core/TextEncoding.hpp",
+      "fml": "src/fml_core/TextEncoding.hpp",
+      "baseline_sha256": "c7573d8aa4eb08d2a4fa935343ec4c820b2d22b365982d1d188bcc2cf7d21380"
+    },
+    {
+      "standalone": "support/formats/AnimateAtlas.cpp",
+      "fml": "src/fml_formats/AnimateAtlas.cpp",
+      "baseline_sha256": "7db278641b097db8a0bc23bb3f1e88c29a6848f43cdef6c63c15e14d7f4b2219"
+    },
+    {
+      "standalone": "support/formats/AnimateAtlas.hpp",
+      "fml": "src/fml_formats/AnimateAtlas.hpp",
+      "baseline_sha256": "bf1ffd5385e5152ca5e2007e1abc72a7b91ff747510ce24ed10803d4a9e5ccf4"
+    },
+    {
+      "standalone": "support/formats/ChartExchange.cpp",
+      "fml": "src/fml_formats/ChartExchange.cpp",
+      "baseline_sha256": "03b3abf2b1e95429c260eb8c960b921e2d6ca754188f2dd305d10fa72b298730"
+    },
+    {
+      "standalone": "support/formats/ChartExchange.hpp",
+      "fml": "src/fml_formats/ChartExchange.hpp",
+      "baseline_sha256": "7aaf88a31abecce16d66de219a05af3fdb575ef405b096f0a9976c9a63987d9d"
+    },
+    {
+      "standalone": "support/formats/CodenameChart.cpp",
+      "fml": "src/fml_formats/CodenameChart.cpp",
+      "baseline_sha256": "cbf92753b380c16dfde29eefe2fd5a3dfe757a99ca8e3ba47ac358d98ca5d0b3"
+    },
+    {
+      "standalone": "support/formats/CodenameChart.hpp",
+      "fml": "src/fml_formats/CodenameChart.hpp",
+      "baseline_sha256": "c59314f2997f6c14a4278be9a290a8bf50b0d01a4e2cf55f523506067af5f8f9"
+    },
+    {
+      "standalone": "support/formats/JsonRead.hpp",
+      "fml": "src/fml_formats/JsonRead.hpp",
+      "baseline_sha256": "bf52affe08cf03d238769c0a0f38e5cddde2d76f8b99b06284c30dbb104f9c93"
+    },
+    {
+      "standalone": "support/formats/LegacyChart.cpp",
+      "fml": "src/fml_formats/LegacyChart.cpp",
+      "baseline_sha256": "f01be5fbe8c21d541853466ccb6151c0f87e4cf8d4469ab03ae41a7a9bc30d2c"
+    },
+    {
+      "standalone": "support/formats/LegacyChart.hpp",
+      "fml": "src/fml_formats/LegacyChart.hpp",
+      "baseline_sha256": "a588247be73e060aae0a8c30638423573c48b93bb708d69418dd93d16567b4d4"
+    },
+    {
+      "standalone": "support/formats/PsychSongAudio.hpp",
+      "fml": "src/fml_formats/PsychSongAudio.hpp",
+      "baseline_sha256": "df0386584ccfb9f9625488351cb50a4a9a961b9873efb77ac7d779f098753057"
+    },
+    {
+      "standalone": "support/formats/PsychSource.hpp",
+      "fml": "src/fml_formats/PsychSource.hpp",
+      "baseline_sha256": "668ac846c5aff86985eae2ea27e81984713d03b609efda914996e1c36bd4a449"
+    },
+    {
+      "standalone": "support/formats/SongMeta.cpp",
+      "fml": "src/fml_formats/SongMeta.cpp",
+      "baseline_sha256": "12d31e2e9c31a53bbaf1afbe755ae755298c837a7ddb11bc3465f2430afa77a2"
+    },
+    {
+      "standalone": "support/formats/SongMeta.hpp",
+      "fml": "src/fml_formats/SongMeta.hpp",
+      "baseline_sha256": "8116ecb17afa2a746c86a2f21e3fbb59b73f77560178863b18032334ce698569"
+    },
+    {
+      "standalone": "support/formats/SparrowAtlas.cpp",
+      "fml": "src/fml_formats/SparrowAtlas.cpp",
+      "baseline_sha256": "b2f8b6ede76e5fd73526224115f8b82d8b69ed04e34ef25fe305de50df3dc235"
+    },
+    {
+      "standalone": "support/formats/SparrowAtlas.hpp",
+      "fml": "src/fml_formats/SparrowAtlas.hpp",
+      "baseline_sha256": "2f64eb7e2067633c7bc9dadb7e16f17fb2897e2566513d454d45e70cc9560bfc"
+    },
+    {
+      "standalone": "support/io/Vfs.cpp",
+      "fml": "src/fml_io/Vfs.cpp",
+      "baseline_sha256": "7364404e0d281d4cb14bae91c76ddb2045cbef841be1e862dd885a04046488d5"
+    },
+    {
+      "standalone": "support/io/Vfs.hpp",
+      "fml": "src/fml_io/Vfs.hpp",
+      "baseline_sha256": "d93272cc36b46d3302a66b429dc8a17d56d690d8d40e92f5f76e82961321a146"
+    },
+    {
+      "standalone": "core/NoteBlocks.cpp",
+      "fml": "src/fml_notelab/NoteBlocks.cpp",
+      "baseline_sha256": "49239fc4bd8a3efa822438e71fa4332275a30536429e58e34ce08ad6159186e9"
+    },
+    {
+      "standalone": "core/NoteBlocks.hpp",
+      "fml": "src/fml_notelab/NoteBlocks.hpp",
+      "baseline_sha256": "df445d5cb6e03098e79b070d8757bcc395d31b7ed24b0e74f7ee73a980dda2e9"
+    },
+    {
+      "standalone": "core/NoteCode.cpp",
+      "fml": "src/fml_notelab/NoteCode.cpp",
+      "baseline_sha256": "041bb0acd5d16bdfe83d113b9a17822efabf5ca4b9b9e6b8bbc7de0309e46710"
+    },
+    {
+      "standalone": "core/NoteCode.hpp",
+      "fml": "src/fml_notelab/NoteCode.hpp",
+      "baseline_sha256": "b07572606272ce9535de72ca8b3d2e5742934ef5f7a9028c011757310d99c5c1"
+    },
+    {
+      "standalone": "core/NoteCreate.cpp",
+      "fml": "src/fml_notelab/NoteCreate.cpp",
+      "baseline_sha256": "04e976be341139b07b66d818f6163494abb0b09087c92304f4249235995be234"
+    },
+    {
+      "standalone": "core/NoteCreate.hpp",
+      "fml": "src/fml_notelab/NoteCreate.hpp",
+      "baseline_sha256": "ffdd23299102421cef121026e251e8a99b2fdf57653758c0844af29ef14a630d"
+    },
+    {
+      "standalone": "core/NoteExport.cpp",
+      "fml": "src/fml_notelab/NoteExport.cpp",
+      "baseline_sha256": "e8b44ff2d62757c597ab1680a648b49769dcae7b307119b1b84f9a6b4b5a6e15"
+    },
+    {
+      "standalone": "core/NoteExport.hpp",
+      "fml": "src/fml_notelab/NoteExport.hpp",
+      "baseline_sha256": "55758808564329d5f5f7b5e1049dd7e02ed640dea4bda0b36c12327a8ba4b034"
+    },
+    {
+      "standalone": "core/NoteImage.cpp",
+      "fml": "src/fml_notelab/NoteImage.cpp",
+      "baseline_sha256": "6124103d9a87e11f1ca233c01184d44da763306166665dc695d869cc5b21f423"
+    },
+    {
+      "standalone": "core/NoteImage.hpp",
+      "fml": "src/fml_notelab/NoteImage.hpp",
+      "baseline_sha256": "d6d73808f3d243786e3838791f2559a7bfd8257953968c21099501cabb408cff"
+    },
+    {
+      "standalone": "core/NoteInstall.cpp",
+      "fml": "src/fml_notelab/NoteInstall.cpp",
+      "baseline_sha256": "12303ce0ad988ddcda9fd72d7d2b59a34ef1e3dccae31d7d6e3936ae0d0f84da"
+    },
+    {
+      "standalone": "core/NoteInstall.hpp",
+      "fml": "src/fml_notelab/NoteInstall.hpp",
+      "baseline_sha256": "d5ac05f2844e4458822ed141afa479735557a6df51758cfbec97bc14f299df63"
+    },
+    {
+      "standalone": "core/NotePreview.cpp",
+      "fml": "src/fml_notelab/NotePreview.cpp",
+      "baseline_sha256": "d126a9a19c86df4b27a2f2840654e3b8c7105b0ab2c1bce31b91b7df9650c582"
+    },
+    {
+      "standalone": "core/NotePreview.hpp",
+      "fml": "src/fml_notelab/NotePreview.hpp",
+      "baseline_sha256": "d1bf5c05020d923dfbf853d0d8cf413cc4747cde071f679df22ad56013ae8c30"
+    },
+    {
+      "standalone": "core/NoteProject.cpp",
+      "fml": "src/fml_notelab/NoteProject.cpp",
+      "baseline_sha256": "65cc66db24b003f3e0229dbd71f31b00a70f2a11ede582d7f3f6201e926e83a5"
+    },
+    {
+      "standalone": "core/NoteProject.hpp",
+      "fml": "src/fml_notelab/NoteProject.hpp",
+      "baseline_sha256": "3a9e05cbce21c5f73eb1a69b60831ff831e48d9b810ac7078fbc4f167e700b47"
+    },
+    {
+      "standalone": "core/NoteSongs.cpp",
+      "fml": "src/fml_notelab/NoteSongs.cpp",
+      "baseline_sha256": "3534202f577777ec8f6415458c5e8593bc4ffb482834d7fafe3c54506bf2a0a0"
+    },
+    {
+      "standalone": "core/NoteSongs.hpp",
+      "fml": "src/fml_notelab/NoteSongs.hpp",
+      "baseline_sha256": "4c0c53d828dd021ada7cca694ae625eb4e74ec451913112ded58b0cc348378d3"
+    },
+    {
+      "standalone": "core/NoteStyle.cpp",
+      "fml": "src/fml_notelab/NoteStyle.cpp",
+      "baseline_sha256": "9ab8db69ee296018f32480b5c24b53c70427527f0104fdca2d0ee57390895fdf"
+    },
+    {
+      "standalone": "core/NoteStyle.hpp",
+      "fml": "src/fml_notelab/NoteStyle.hpp",
+      "baseline_sha256": "9d2390906a6da4bba700f60db5599312c35ece73ae1b44c1771988afe9672fbc"
+    },
+    {
+      "standalone": "core/NoteStyleCheck.cpp",
+      "fml": "src/fml_notelab/NoteStyleCheck.cpp",
+      "baseline_sha256": "68cc8345ab5f7a878eb506090bef00084402a8cf96ed729c817de62ec0793d83"
+    },
+    {
+      "standalone": "core/NoteStyleCheck.hpp",
+      "fml": "src/fml_notelab/NoteStyleCheck.hpp",
+      "baseline_sha256": "d2b98ff12fa60984295e386c7db116576191d21e077bbe4af72faa305c9df626"
+    },
+    {
+      "standalone": "core/NoteStyleRead.cpp",
+      "fml": "src/fml_notelab/NoteStyleRead.cpp",
+      "baseline_sha256": "d721d6485205abc22d142db9806b93727462c73eb633fc100211a9b2cb5e3faf"
+    },
+    {
+      "standalone": "core/NoteStyleRead.hpp",
+      "fml": "src/fml_notelab/NoteStyleRead.hpp",
+      "baseline_sha256": "131e6e87ddc2bb0bfde805336a86ca18d76a2bfa074a114cbae72f2255ff492f"
+    },
+    {
+      "standalone": "core/NoteTypes.cpp",
+      "fml": "src/fml_notelab/NoteTypes.cpp",
+      "baseline_sha256": "6891eef1fc2e68392534301f7064f2bd97aba585e1c1eb07023095f7c5a204ee"
+    },
+    {
+      "standalone": "core/NoteTypes.hpp",
+      "fml": "src/fml_notelab/NoteTypes.hpp",
+      "baseline_sha256": "95f753df4d48016343e375b94e5b6c8256be947bf83ec5ae3ca235e50d008f75"
+    },
+    {
+      "standalone": "support/render/CreativeFxShader.hpp",
+      "fml": "src/fml_render/CreativeFxShader.hpp",
+      "baseline_sha256": "f112fc7d718a2124de1110c1ecc68bddad14929d67c68e42bfe80f6df458bc2e"
+    },
+    {
+      "standalone": "support/render/FxShaders.cpp",
+      "fml": "src/fml_render/FxShaders.cpp",
+      "baseline_sha256": "4ae648caefe4973efed15a265778f5aa1e9e0a0fc301f5292ba2fb5fafb66d31"
+    },
+    {
+      "standalone": "support/render/FxShaders.hpp",
+      "fml": "src/fml_render/FxShaders.hpp",
+      "baseline_sha256": "b803365f379a9463e7e2adc96ca94b489cb02a0f764feb4282a1679b8b29cb9c"
+    },
+    {
+      "standalone": "support/render/GlRenderer.cpp",
+      "fml": "src/fml_render/GlRenderer.cpp",
+      "baseline_sha256": "b03143165e7b8e7f0e203a686982413d22fd5ff579cb7eaf566b4a431675d2fe"
+    },
+    {
+      "standalone": "support/render/GlRenderer.hpp",
+      "fml": "src/fml_render/GlRenderer.hpp",
+      "baseline_sha256": "d60cff6f4118a0a3ad94fc8268e2571b358e01536087d2fc982f8d6f5ae0f4cf"
+    },
+    {
+      "standalone": "support/render/ShaderLibrary.cpp",
+      "fml": "src/fml_render/ShaderLibrary.cpp",
+      "baseline_sha256": "499101ec71c3669d1cdd1cf46995e7b6842865ff044f96a3fefec6edc9450527"
+    },
+    {
+      "standalone": "support/render/ShaderLibrary.hpp",
+      "fml": "src/fml_render/ShaderLibrary.hpp",
+      "baseline_sha256": "9262ba211069ac71f91b08488546a0a04474572b5797e7ce0f991b829c9df5b1"
+    },
+    {
+      "standalone": "support/render/TextRaster.cpp",
+      "fml": "src/fml_render/TextRaster.cpp",
+      "baseline_sha256": "cf3b23a60b9d1e79c136a20401dc2067da90d053039b6d284798ab4e0047d7c5"
+    },
+    {
+      "standalone": "support/render/TextRaster.hpp",
+      "fml": "src/fml_render/TextRaster.hpp",
+      "baseline_sha256": "286c444cb009c8b8a66f3fd6c6168cd28c5d84c16d7535082e7e517cab5f9cf0"
+    },
+    {
+      "standalone": "support/runtime/Scene.cpp",
+      "fml": "src/fml_runtime/Scene.cpp",
+      "baseline_sha256": "77b9a7a163180539832a2e076963379aabec49b3031e4f6362c090f37485ec26"
+    },
+    {
+      "standalone": "support/runtime/Scene.hpp",
+      "fml": "src/fml_runtime/Scene.hpp",
+      "baseline_sha256": "28465e78707a46b76bde2b1d19b051c5755e136b15bb1b880ff8c7242486de88"
+    },
+    {
+      "standalone": "tests/CoreRegression.cpp",
+      "fml": "src/tools/fml_notelabcheck.cpp",
+      "baseline_sha256": "a75895d33235c9c3afd45212878cbf5a632ad00f4e8924afad11af1393183139"
+    },
+    {
+      "standalone": "support/audio/stb_vorbis_impl.c",
+      "fml": "src/tools/stb_vorbis_impl.c",
+      "baseline_sha256": "4eb4949e0243a09731130dc7aee2cf848ca76835e15c7ac75f2b5d7f15bd041d"
+    }
+  ]
+}

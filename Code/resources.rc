@@ -1,0 +1,25 @@
+#include <winver.h>
+
+1 ICON "notelab.ico"
+102 RCDATA "notelab-logo.png"
+1 VERSIONINFO
+FILEVERSION 1,0,3,0
+PRODUCTVERSION 1,0,3,0
+FILETYPE VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "Note Lab - FML Tool\0"
+            VALUE "FileVersion", "1.0.3\0"
+            VALUE "ProductName", "Note Lab\0"
+            VALUE "ProductVersion", "1.0.3\0"
+            VALUE "OriginalFilename", "NoteLab.exe\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

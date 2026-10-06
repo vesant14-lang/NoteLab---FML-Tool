@@ -1,0 +1,1467 @@
+{
+    "product":  "Note Lab",
+    "version":  "1.0.3",
+    "platform":  "Windows x64",
+    "files":  [
+                  {
+                      "path":  ".gitattributes",
+                      "bytes":  142,
+                      "sha256":  "792a9bd7cd07eba47f8cd989c9a59684e169fa2061b728e0071d3d374a0e1d14"
+                  },
+                  {
+                      "path":  ".github/workflows/build.yml",
+                      "bytes":  331,
+                      "sha256":  "f1098dd63e38183ef676b73438679d4744e14d6fbdbacadc1ceaceb811a832aa"
+                  },
+                  {
+                      "path":  ".gitignore",
+                      "bytes":  92,
+                      "sha256":  "9313c61c0ae5ccdc7918b98e36985f3a30839361e5eddb980282397c0da79fb9"
+                  },
+                  {
+                      "path":  "assets/notelab.ico",
+                      "bytes":  67843,
+                      "sha256":  "e70e631222d51f998e81f55a474e8a32456431f6fc4dbff2e414af60243902a2"
+                  },
+                  {
+                      "path":  "assets/notelab-logo.png",
+                      "bytes":  1267927,
+                      "sha256":  "e81c253152055fcd4933d174e5633dacb310732cc88d4c225f53d3ed7b5741c9"
+                  },
+                  {
+                      "path":  "BITACORA.md",
+                      "bytes":  35434,
+                      "sha256":  "63151e562c3955632beef5b07381ac09a22bd43f1ac8d4172a6ac984b98f4d4b"
+                  },
+                  {
+                      "path":  "build.bat",
+                      "bytes":  91,
+                      "sha256":  "ccf7f14de301db7ca9555412b278532de2126d4c90f86feefceae1ca3cdb433c"
+                  },
+                  {
+                      "path":  "build-project.bat",
+                      "bytes":  3672,
+                      "sha256":  "7d463964f564eb9b95354863ad2cd2873d0c5d40c7c661167261a920adc60391"
+                  },
+                  {
+                      "path":  "capture-demo.ps1",
+                      "bytes":  4946,
+                      "sha256":  "fa541ccb4437c5e75990a496b3458a1b5e93d891dc0dcb13b2ec2d309db5a78e"
+                  },
+                  {
+                      "path":  "CHANGELOG.md",
+                      "bytes":  23688,
+                      "sha256":  "3ef057057b7ace7ef97a320b7ecf5152b461b0d974d7d432a7d8e82a66537319"
+                  },
+                  {
+                      "path":  "CONTRIBUTING.md",
+                      "bytes":  1098,
+                      "sha256":  "13dedd1419d7ea6064a75209df1390f0c0a300fab1bff4ff08700e31eb7182e0"
+                  },
+                  {
+                      "path":  "core/NoteBlocks.cpp",
+                      "bytes":  151224,
+                      "sha256":  "125d509cf662d1675b80a50af74e93f73d574d88610db5f60f54aa2c779845ad"
+                  },
+                  {
+                      "path":  "core/NoteBlocks.hpp",
+                      "bytes":  10815,
+                      "sha256":  "042c9dc6def58653923bfda0cb6dbb1b012b8010b16d5b749003ee8d235ce607"
+                  },
+                  {
+                      "path":  "core/NoteCode.cpp",
+                      "bytes":  43177,
+                      "sha256":  "02be2f7ba3ce43236bee92917c49ba7b7a7f9d857763a5bc09bab8e666bda176"
+                  },
+                  {
+                      "path":  "core/NoteCode.hpp",
+                      "bytes":  1974,
+                      "sha256":  "65c40eb372812ab31d2ca24f901db46d41e9ce2e6a11b7e899a76c0e6c57cb45"
+                  },
+                  {
+                      "path":  "core/NoteCreate.cpp",
+                      "bytes":  117610,
+                      "sha256":  "6c360f5708672cd706976094fd8b808d018827adaad27f02ee7d6eec39fa206c"
+                  },
+                  {
+                      "path":  "core/NoteCreate.hpp",
+                      "bytes":  20666,
+                      "sha256":  "9bc5836ddae3a4c775e954a73d1119f5258912f3202462fe796a7c5af6bf7372"
+                  },
+                  {
+                      "path":  "core/NoteExport.cpp",
+                      "bytes":  109859,
+                      "sha256":  "6037f9c0c6d4a35cfe2883f28b225964ad690f2bbe58caf81ea4a8f450c1050a"
+                  },
+                  {
+                      "path":  "core/NoteExport.hpp",
+                      "bytes":  5206,
+                      "sha256":  "55758808564329d5f5f7b5e1049dd7e02ed640dea4bda0b36c12327a8ba4b034"
+                  },
+                  {
+                      "path":  "core/NoteImage.cpp",
+                      "bytes":  10413,
+                      "sha256":  "79b514152fa5eac62bd0b7e386a8bcf0d2f2bfc4ef9fce74e99ad4f394ab5553"
+                  },
+                  {
+                      "path":  "core/NoteImage.hpp",
+                      "bytes":  2493,
+                      "sha256":  "0a4a63012d752b81d6474c43b3dcc530b760733130f08a56f0ad26f3a813728a"
+                  },
+                  {
+                      "path":  "core/NoteInstall.cpp",
+                      "bytes":  15713,
+                      "sha256":  "12303ce0ad988ddcda9fd72d7d2b59a34ef1e3dccae31d7d6e3936ae0d0f84da"
+                  },
+                  {
+                      "path":  "core/NoteInstall.hpp",
+                      "bytes":  4996,
+                      "sha256":  "d5ac05f2844e4458822ed141afa479735557a6df51758cfbec97bc14f299df63"
+                  },
+                  {
+                      "path":  "core/NoteMediaEmit.hpp",
+                      "bytes":  8831,
+                      "sha256":  "8bbf9bdde446011d2987725a46e7dfa7c17944f163bcc07fda2102579831c6ec"
+                  },
+                  {
+                      "path":  "core/NotePreview.cpp",
+                      "bytes":  32079,
+                      "sha256":  "60349e3f6ff6ab9d70143c8f17d78a65dfb1f6190c9f29a1d374805ade9caaab"
+                  },
+                  {
+                      "path":  "core/NotePreview.hpp",
+                      "bytes":  8500,
+                      "sha256":  "2d029b88d1c84480c8372ebc9543fabecc0006bc6814bf37ae9179a76e195f61"
+                  },
+                  {
+                      "path":  "core/NoteProject.cpp",
+                      "bytes":  38275,
+                      "sha256":  "4374799cbae6dd47eb7a16534bbd802e5b94160c4f6f8792963542d332b074cb"
+                  },
+                  {
+                      "path":  "core/NoteProject.hpp",
+                      "bytes":  4699,
+                      "sha256":  "b80d50f4a872346c54ad8864778391be0b6e08b53c6538f7db9bcbd18a905d11"
+                  },
+                  {
+                      "path":  "core/NoteResources.cpp",
+                      "bytes":  12380,
+                      "sha256":  "49f5641a4ec56c784442c48078905868dd22baeb6ef2a8e4a9c3b6846c01bf88"
+                  },
+                  {
+                      "path":  "core/NoteResources.hpp",
+                      "bytes":  2191,
+                      "sha256":  "e42dd9ea6332734e0c93eb79eb9fd64627c9a517c275cd40cde27daedbc48926"
+                  },
+                  {
+                      "path":  "core/NoteSongs.cpp",
+                      "bytes":  48321,
+                      "sha256":  "bec4be46e151d3e1cf9e8845e38a3b7880e503172f76f72ae03196bc7cb69228"
+                  },
+                  {
+                      "path":  "core/NoteSongs.hpp",
+                      "bytes":  4350,
+                      "sha256":  "d2b7de31ce7d8213f5c6109bd3ecacec43f6e6b30ba0ca69c0b298c7c232e3aa"
+                  },
+                  {
+                      "path":  "core/NoteStyle.cpp",
+                      "bytes":  6606,
+                      "sha256":  "9ab8db69ee296018f32480b5c24b53c70427527f0104fdca2d0ee57390895fdf"
+                  },
+                  {
+                      "path":  "core/NoteStyle.hpp",
+                      "bytes":  8600,
+                      "sha256":  "4f049f56f562a956cdf689964b9b56412f9374ab7e019ab4e29815a9b1e98183"
+                  },
+                  {
+                      "path":  "core/NoteStyleCheck.cpp",
+                      "bytes":  33402,
+                      "sha256":  "dd74598e39192580584e900e11e52319b023f241a5ed4c099e707b9173ddb9ec"
+                  },
+                  {
+                      "path":  "core/NoteStyleCheck.hpp",
+                      "bytes":  2532,
+                      "sha256":  "d2b98ff12fa60984295e386c7db116576191d21e077bbe4af72faa305c9df626"
+                  },
+                  {
+                      "path":  "core/NoteStyleRead.cpp",
+                      "bytes":  117737,
+                      "sha256":  "0d0dea13450afe7cc0ef8a5f86d30019c41746f72eb1f2239ddb565e3ca640a8"
+                  },
+                  {
+                      "path":  "core/NoteStyleRead.hpp",
+                      "bytes":  4885,
+                      "sha256":  "131e6e87ddc2bb0bfde805336a86ca18d76a2bfa074a114cbae72f2255ff492f"
+                  },
+                  {
+                      "path":  "core/NoteTypes.cpp",
+                      "bytes":  19119,
+                      "sha256":  "971a702b76e7bf7bf62632208a786e4a53a6f395b86f8fd7ae63d3e1f39097be"
+                  },
+                  {
+                      "path":  "core/NoteTypes.hpp",
+                      "bytes":  4722,
+                      "sha256":  "95f753df4d48016343e375b94e5b6c8256be947bf83ec5ae3ca235e50d008f75"
+                  },
+                  {
+                      "path":  "docs/CORE_SYNC.md",
+                      "bytes":  5611,
+                      "sha256":  "0d04e79195ff50b20c1da1aab94803766a4f80536f5abd67f9c9f2f34aa89a9a"
+                  },
+                  {
+                      "path":  "docs/GUIDE_ADVANCED_ES.md",
+                      "bytes":  61426,
+                      "sha256":  "f47182dd18cbbacff3a5ff8c408a9429539f8885f3477412d6d2629fc3c6690f"
+                  },
+                  {
+                      "path":  "docs/images/base-assets-en.png",
+                      "bytes":  339327,
+                      "sha256":  "74d0b1b825cbbd64954e7f87c52d7311e59be0229abc3bc9994cafceadb1f945"
+                  },
+                  {
+                      "path":  "docs/images/base-preview-en.png",
+                      "bytes":  176739,
+                      "sha256":  "22e3a97fd2aebc67088d742c96ea956d2113a03085c979f7947ef527449168e2"
+                  },
+                  {
+                      "path":  "docs/images/blocks-in-use-base-en.png",
+                      "bytes":  335095,
+                      "sha256":  "efb33a8fe36ea01cc88fa1ee34908d4c0d1c81027c34f6ff898963fc78e19d31"
+                  },
+                  {
+                      "path":  "docs/images/blocks-note-row-es.png",
+                      "bytes":  200720,
+                      "sha256":  "b352b410d9d7fe864c9b459b1c8967e8237a83696cd26b795cb0436ef2473a39"
+                  },
+                  {
+                      "path":  "docs/images/blocks-resources-compact-en.png",
+                      "bytes":  205514,
+                      "sha256":  "f36a1ffe39e2bcebf839e7a35da169ae9d47ed7a0ee0c87719a3acdf23d818e1"
+                  },
+                  {
+                      "path":  "docs/images/blocks-resources-es.png",
+                      "bytes":  347262,
+                      "sha256":  "0adc4c27947a27f288ff04e56052b5a9e677a4a1e640e032f49f16cbabca239d"
+                  },
+                  {
+                      "path":  "docs/images/code-editor-en.png",
+                      "bytes":  309005,
+                      "sha256":  "39058b6b5143bd8d62640b5b34c8ea678be6ec78b92a2a8cdcd020f3b2a145d1"
+                  },
+                  {
+                      "path":  "docs/images/combine-styles-en.png",
+                      "bytes":  199152,
+                      "sha256":  "dc2bc87741de55b13a1aecedb65d98b673bfe07203184708ad522670ca8d4a59"
+                  },
+                  {
+                      "path":  "docs/images/creator-base-es.png",
+                      "bytes":  252374,
+                      "sha256":  "9a0e9e2167f245fd56de2b18556c1da75d59669ba7497dabc6978d3c512e2ed1"
+                  },
+                  {
+                      "path":  "docs/images/export-base-es.png",
+                      "bytes":  241713,
+                      "sha256":  "74098bf022bf449104f2166be77be1904bf909148b427fd0143bd39d8f651269"
+                  },
+                  {
+                      "path":  "docs/images/game-codename.jpg",
+                      "bytes":  71473,
+                      "sha256":  "0cd7dd014f5ed300c3b3819f7908345232fcd9b5ff9296e32bca942e5e054207"
+                  },
+                  {
+                      "path":  "docs/images/game-psych.jpg",
+                      "bytes":  81249,
+                      "sha256":  "371bfbb5bcfd790bbc45b3f6667b79a11789295486eeea9f28eae0e61477bdb8"
+                  },
+                  {
+                      "path":  "docs/images/game-vslice.jpg",
+                      "bytes":  48096,
+                      "sha256":  "7362e438c941e1cf05aac340c7c8af69cf91db421709ffa6602e97eccf28ca1c"
+                  },
+                  {
+                      "path":  "docs/images/hud-drawn-pieces-es.png",
+                      "bytes":  277907,
+                      "sha256":  "7522f14218d7b5e3447e95b3405a82be660068d178b2bf7d46f799b6c8e90578"
+                  },
+                  {
+                      "path":  "docs/images/hud-drawn-preview-es.png",
+                      "bytes":  254193,
+                      "sha256":  "63d08e21c4215e6dcab16a696d725e5af228bc7ce6910e5c9f580860524c8467"
+                  },
+                  {
+                      "path":  "docs/images/hud-steps-es.png",
+                      "bytes":  254184,
+                      "sha256":  "3dfb113656d3c9deaff42a31e64eda2629809e1f626d264f380def030ac6e197"
+                  },
+                  {
+                      "path":  "docs/images/new-note-base-es.png",
+                      "bytes":  236303,
+                      "sha256":  "876b5a8cfc632686a6d0bc4ebeb3768830a8788046ee935ff516a9d6079410bb"
+                  },
+                  {
+                      "path":  "docs/images/new-note-ready-es.png",
+                      "bytes":  223036,
+                      "sha256":  "286d2f0a96831421f15cb57715d0ca07cf15e43d9f3383570a033bfd62007b43"
+                  },
+                  {
+                      "path":  "docs/images/preview-compact-es.png",
+                      "bytes":  125679,
+                      "sha256":  "5143efe5f50a5533196a2a2563b1bfb923edc89d08a2282f38bd3af56acc7552"
+                  },
+                  {
+                      "path":  "docs/images/receptors-preview-es.png",
+                      "bytes":  257003,
+                      "sha256":  "8397e585abc367de7f18b4aade626878691b36c9d3f3987b35ea534fbb6f62b5"
+                  },
+                  {
+                      "path":  "docs/images/resource-image-base-es.png",
+                      "bytes":  309407,
+                      "sha256":  "9a5038ba01f39d3d0aaf11dfde55e7f54ac534e82612c7791b07ccecebbb6fa0"
+                  },
+                  {
+                      "path":  "docs/images/resources-base-es.png",
+                      "bytes":  279895,
+                      "sha256":  "3ff74321d14ddc02845177449bde50af2bfef63523507361533e09b753d5dede"
+                  },
+                  {
+                      "path":  "docs/images/resource-sound-base-es.png",
+                      "bytes":  300464,
+                      "sha256":  "a31b4802fceaefaf20dcb31c0edb65f259f1ec286c7ca978b6580351c216b1b5"
+                  },
+                  {
+                      "path":  "docs/images/script-to-blocks-base-en.png",
+                      "bytes":  239902,
+                      "sha256":  "6c5a03c1be79d221e2b57fab46450491ed680acab4840f4cadd5574af4d78040"
+                  },
+                  {
+                      "path":  "docs/images/sounds-songs-base-es.png",
+                      "bytes":  258327,
+                      "sha256":  "d2b0bc6f84acdc435a415a087ea3cacd772c43a37fcc84a9bcebea4c85093796"
+                  },
+                  {
+                      "path":  "docs/images/sprite-final-drawn-es.png",
+                      "bytes":  377304,
+                      "sha256":  "ad61fc7d9e7e41f91472dd878c6e03f382b38dfc594a3f34ba3ade94566b2996"
+                  },
+                  {
+                      "path":  "docs/images/sprite-final-es.png",
+                      "bytes":  309610,
+                      "sha256":  "29c568e2829021ce6edc1dc3693bef80ef58a616889755a7ec43418b5413d2d0"
+                  },
+                  {
+                      "path":  "docs/images/sprite-free-pixel-es.png",
+                      "bytes":  220695,
+                      "sha256":  "e8cbc534f9a998d358b75a3066b45e5591beeb9a6646c561df8f481efab7e1d6"
+                  },
+                  {
+                      "path":  "docs/images/sprite-hit-receptor-es.png",
+                      "bytes":  234812,
+                      "sha256":  "a709df3d973854577c423811ac1a0de1bd2f67634c70d56ba63742d05021d7f2"
+                  },
+                  {
+                      "path":  "docs/images/sprite-note-hold-es.png",
+                      "bytes":  205012,
+                      "sha256":  "ee46317bdd1df2f128e91417151df9266eb632fa03ba859e754a66d3a15b22f8"
+                  },
+                  {
+                      "path":  "docs/images/sprite-note-look-es.png",
+                      "bytes":  229337,
+                      "sha256":  "4e5b3eebeeedba0ae2a2a319b193ef1052f670936d578c37a811fc9edea2427d"
+                  },
+                  {
+                      "path":  "docs/images/sprite-palette-es.png",
+                      "bytes":  239428,
+                      "sha256":  "1a08b6f20b97b5fd6e0d168f30f7b6cf2fdecb8d2f5a100d45266f128697a295"
+                  },
+                  {
+                      "path":  "docs/images/sprite-selection-es.png",
+                      "bytes":  230960,
+                      "sha256":  "99ba2067bc39bf0613cb88becd5cdde2b9e7de5102fd3fb62d0ae9519f59e44c"
+                  },
+                  {
+                      "path":  "docs/images/sprite-sheet-es.png",
+                      "bytes":  240984,
+                      "sha256":  "b8e64651c0c91855987090cb9f41eeb6c2aa341147c540166010a21c1d3424a1"
+                  },
+                  {
+                      "path":  "docs/images/sprite-start-es.png",
+                      "bytes":  126108,
+                      "sha256":  "91258262926660c8557cd227f7225e5d55388392606af67ea6ea6357e8553e4c"
+                  },
+                  {
+                      "path":  "docs/images/sprite-tabs-es.png",
+                      "bytes":  210649,
+                      "sha256":  "77663f3af488598387aeeb7c43d0cd36d395890050f1eeb72edcf193d7c72258"
+                  },
+                  {
+                      "path":  "docs/images/sprite-tutorial-es.png",
+                      "bytes":  274369,
+                      "sha256":  "9d41ae6f67178fcd8df0e43df8e032b07af413136b7a9b63926a7e8411770cb4"
+                  },
+                  {
+                      "path":  "docs/images/welcome-compact-es.png",
+                      "bytes":  104175,
+                      "sha256":  "43c6020e1803b2472324a9bef9f0822a1a5cfe758afaa24a4f6737cb806a72da"
+                  },
+                  {
+                      "path":  "docs/images/welcome-en.png",
+                      "bytes":  126351,
+                      "sha256":  "a1949995f046a81a1f88debd29a88fa9a1190b944706b86f22aedc577d455a10"
+                  },
+                  {
+                      "path":  "docs/MODULES.md",
+                      "bytes":  8966,
+                      "sha256":  "9247d8511aeae6365169b81bd2ec8d0959252862fd1f3bb4c79d2d8766191fdb"
+                  },
+                  {
+                      "path":  "docs/NEXT_IMPROVEMENTS_ES.md",
+                      "bytes":  2021,
+                      "sha256":  "dcefef0b828f79a20fccc8fc12a800b81a92992e720d5d6c8c6e29f454a86cdc"
+                  },
+                  {
+                      "path":  "docs/QUICKSTART_ES.md",
+                      "bytes":  6659,
+                      "sha256":  "084980aab1138283d7aa1b5e0f1a77bcb1bcf137757a1d83fdaee78583c173f6"
+                  },
+                  {
+                      "path":  "docs/RELEASE_CHECKS.md",
+                      "bytes":  9891,
+                      "sha256":  "6629143cec3ff453ca440af88c5755cfd2c3d20c3756f292779e0aa6904b278b"
+                  },
+                  {
+                      "path":  "FML_SYNC_MAP.json",
+                      "bytes":  16289,
+                      "sha256":  "c9872f15eb5080cae9fabf84d1f672564165601a90d4ca97065455cab1efce0f"
+                  },
+                  {
+                      "path":  "LICENSE",
+                      "bytes":  1086,
+                      "sha256":  "abbb2c8ebf6a4e87e04c828172d846f70e686a14a433c67e84711f70bfab1a69"
+                  },
+                  {
+                      "path":  "licenses/imgui.txt",
+                      "bytes":  1083,
+                      "sha256":  "173506a2d6f7fb67990d257fb2507f188690eca39060c39469ae7bef43aae2a3"
+                  },
+                  {
+                      "path":  "licenses/json-MIT.txt",
+                      "bytes":  1075,
+                      "sha256":  "8838e206e44184072a772982558b267ab22c6161375fca7fa21de61cfde570f7"
+                  },
+                  {
+                      "path":  "licenses/miniaudio.txt",
+                      "bytes":  931,
+                      "sha256":  "e4d0386d135af4bed3e910a883055c069396b4f8c7e517b7ad2caa548d192ae1"
+                  },
+                  {
+                      "path":  "licenses/miniz.txt",
+                      "bytes":  1184,
+                      "sha256":  "0115478d567121238cf6cc1c0c361926cf07a49d9e4c9e66da97fac6a01646b3"
+                  },
+                  {
+                      "path":  "licenses/pugixml.txt",
+                      "bytes":  1066,
+                      "sha256":  "b28be278c2fa4841208cacce213ab2eeaccfda5b285ce6281a26a9695465af12"
+                  },
+                  {
+                      "path":  "licenses/SDL3.txt",
+                      "bytes":  884,
+                      "sha256":  "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd"
+                  },
+                  {
+                      "path":  "licenses/stb-image.txt",
+                      "bytes":  1095,
+                      "sha256":  "5e005d71db7f2d6ea48a7a0cb503eb86cf1b76b17e92dafc57b2b5aec8f56a3b"
+                  },
+                  {
+                      "path":  "licenses/stb-image-write.txt",
+                      "bytes":  1101,
+                      "sha256":  "23e98da906496a5bacda5ebc76c5432788375b7aba84164a4ef59cfd363277bc"
+                  },
+                  {
+                      "path":  "licenses/stb-vorbis.txt",
+                      "bytes":  1096,
+                      "sha256":  "2272115f7cb0bbcf12a53cf1b3b58a5ea4a680625f62098027c1f2d0ae27f0d0"
+                  },
+                  {
+                      "path":  "package-release.ps1",
+                      "bytes":  9138,
+                      "sha256":  "e56f9f4716fb611794542cbbd83f5930c099ce248df039a1ddaafbc3c19f4b40"
+                  },
+                  {
+                      "path":  "prepare-assets.ps1",
+                      "bytes":  2392,
+                      "sha256":  "c4646f99c07c9fe42bb2169ab67d63628c3e59d19a7c6b6da41d85008b57e8e4"
+                  },
+                  {
+                      "path":  "prepare-game-mods.ps1",
+                      "bytes":  5816,
+                      "sha256":  "8a85705e8ead6c2fb00fef729ea9fe715470503492caaadfb9503c4e45ecb9a0"
+                  },
+                  {
+                      "path":  "README.md",
+                      "bytes":  16513,
+                      "sha256":  "59a3b73aead532df868cde7b2af88a718b5474d59fc41f15e85b6d89f0cb7394"
+                  },
+                  {
+                      "path":  "resources.rc",
+                      "bytes":  586,
+                      "sha256":  "36d4c6305f917f4e5cb8cf27bd3d89773a896cf49663859df3f7642e94ea4e98"
+                  },
+                  {
+                      "path":  "SECURITY.md",
+                      "bytes":  827,
+                      "sha256":  "ad81c11c7ccc77ad2fb73b26308e1bd96475463f016aa9f3dfe01e2b74b26fba"
+                  },
+                  {
+                      "path":  "setup_msvc.bat",
+                      "bytes":  1554,
+                      "sha256":  "b5a7dce983a7a26fc5063ac38ca76eb7dcb92e1ed9d888cf6ae9a64f7d3feb6b"
+                  },
+                  {
+                      "path":  "src/BlockCanvas.cpp",
+                      "bytes":  109206,
+                      "sha256":  "02586989e8807983dae1b24c48c1ee7437da3f75cbb402cd0d83ec09ab51b4ca"
+                  },
+                  {
+                      "path":  "src/BlockCanvas.hpp",
+                      "bytes":  5939,
+                      "sha256":  "6520f5429c23b89fcad84dcb3b7e9307d3b6a2b8654fc7518257c0015e6b4511"
+                  },
+                  {
+                      "path":  "src/Branding.hpp",
+                      "bytes":  1704,
+                      "sha256":  "6237102e6650e215d6a386f6958e8dae51020ffd4e5a8cfa5d31dcee94fe13d0"
+                  },
+                  {
+                      "path":  "src/BuildPolicy.hpp",
+                      "bytes":  469,
+                      "sha256":  "307402d90cacde5cc3878bc95772e6fb0ebc237180ac4ded3ae633147995c6f0"
+                  },
+                  {
+                      "path":  "src/CodeEditor.hpp",
+                      "bytes":  6596,
+                      "sha256":  "517cd7ded102b4cf344f700db57b20f962b61c63d301131ee574a84960be0923"
+                  },
+                  {
+                      "path":  "src/CustomCreator.hpp",
+                      "bytes":  48721,
+                      "sha256":  "41b6332233474ccb2109b5cba70b4c0269aa2285906c0ff2e04ceddbaa2c6879"
+                  },
+                  {
+                      "path":  "src/main.cpp",
+                      "bytes":  709993,
+                      "sha256":  "3d7e5d1845ee4cc6b6e78e0c82baf049746325e3aa9e6ec3b2f753e203d62124"
+                  },
+                  {
+                      "path":  "src/ModResources.hpp",
+                      "bytes":  60769,
+                      "sha256":  "8be8f825df2d8a4761764a2d9efb71af9a93b68d4feb85f96421f071ae923f69"
+                  },
+                  {
+                      "path":  "src/NewNote.hpp",
+                      "bytes":  28902,
+                      "sha256":  "a35eb9e52c386b692cf37eb682ebbd3a946b01840081ed0232a7a3cd15fb4ff9"
+                  },
+                  {
+                      "path":  "src/SongTools.hpp",
+                      "bytes":  9198,
+                      "sha256":  "6320b900118dde86e90a87bf2d4e06a83f4469dd1cc07ec22984ff0aaf25be20"
+                  },
+                  {
+                      "path":  "src/SpriteEditor.hpp",
+                      "bytes":  161425,
+                      "sha256":  "3fe8483af83dd25e192a75a19969d92ccb5520d70058218f617f90fa34226871"
+                  },
+                  {
+                      "path":  "src/SpriteShapes.hpp",
+                      "bytes":  30025,
+                      "sha256":  "02d248897120c1134dfb9ec7d0b2bdc75d101fe01aefca03cf2cf46f4ec86f8a"
+                  },
+                  {
+                      "path":  "src/StyleComposer.hpp",
+                      "bytes":  10626,
+                      "sha256":  "1f5c1b580ea85f5a272b770198dc4326321e80abad4e1f3d15b0f3dd0cdf736d"
+                  },
+                  {
+                      "path":  "src/Theme.hpp",
+                      "bytes":  21727,
+                      "sha256":  "7007e9f54d98ee2945dab55841b5b2571762383dd737eed35ed6be23c01271c8"
+                  },
+                  {
+                      "path":  "src/Tutorial.hpp",
+                      "bytes":  152172,
+                      "sha256":  "6c69f66ee197f5b791317fca50833adf31b089964a11d855257a812b8e8a36e1"
+                  },
+                  {
+                      "path":  "support/audio/AudioEngine.cpp",
+                      "bytes":  40799,
+                      "sha256":  "837744f794e64714a6a4254be04506920d5864dade443698ef1ba44fcc6b0f86"
+                  },
+                  {
+                      "path":  "support/audio/AudioEngine.hpp",
+                      "bytes":  6980,
+                      "sha256":  "3cebbac6bbffd748042e05c2ea8276fd9cbca6976065b4cfc7b9dec1a0a6971c"
+                  },
+                  {
+                      "path":  "support/audio/stb_vorbis_impl.c",
+                      "bytes":  243,
+                      "sha256":  "4eb4949e0243a09731130dc7aee2cf848ca76835e15c7ac75f2b5d7f15bd041d"
+                  },
+                  {
+                      "path":  "support/core/Chart.hpp",
+                      "bytes":  6421,
+                      "sha256":  "3a1eb27913397ed4d458d0987effa863639659e53761d286d657e08d92739118"
+                  },
+                  {
+                      "path":  "support/core/CreativeFx.hpp",
+                      "bytes":  6509,
+                      "sha256":  "87de55fbf79a02e448072e5d0148fe2e7f1952551d94dedc48aed3e37811789d"
+                  },
+                  {
+                      "path":  "support/core/Diagnostics.hpp",
+                      "bytes":  4337,
+                      "sha256":  "d2a52722e62a531cc94bdc6c3f590f125041e751c2aa6200aa68562f8c074d61"
+                  },
+                  {
+                      "path":  "support/core/Hash.cpp",
+                      "bytes":  5324,
+                      "sha256":  "a1cf082784c167bf65f2520335053ac7869935d76e0c4dfa572c004a17370924"
+                  },
+                  {
+                      "path":  "support/core/Hash.hpp",
+                      "bytes":  534,
+                      "sha256":  "42c766b939e6e50f3b9ffe21474098196db7425e27741af0c0ea1af28447dea2"
+                  },
+                  {
+                      "path":  "support/core/Model.hpp",
+                      "bytes":  39579,
+                      "sha256":  "9406c9fa671063ae2ceca599574b476a91c05259128606bd86c71c3351f626ec"
+                  },
+                  {
+                      "path":  "support/core/TextEncoding.hpp",
+                      "bytes":  6881,
+                      "sha256":  "c7573d8aa4eb08d2a4fa935343ec4c820b2d22b365982d1d188bcc2cf7d21380"
+                  },
+                  {
+                      "path":  "support/formats/AnimateAtlas.cpp",
+                      "bytes":  24604,
+                      "sha256":  "7db278641b097db8a0bc23bb3f1e88c29a6848f43cdef6c63c15e14d7f4b2219"
+                  },
+                  {
+                      "path":  "support/formats/AnimateAtlas.hpp",
+                      "bytes":  4275,
+                      "sha256":  "2c7f2bc82d4e9ec406c2a3c461aa015feab14f09e64c17b7f7a2af4ccc27f49a"
+                  },
+                  {
+                      "path":  "support/formats/ChartExchange.cpp",
+                      "bytes":  53830,
+                      "sha256":  "901ad40b930739675c1df3f613af0742b214fd49bed234ce1934738d8bb9bfc2"
+                  },
+                  {
+                      "path":  "support/formats/ChartExchange.hpp",
+                      "bytes":  3303,
+                      "sha256":  "30c129de4a6c91ace7f9b4892ccc38198dfc8ca0ea3045a8692ab749a778ec31"
+                  },
+                  {
+                      "path":  "support/formats/CodenameChart.cpp",
+                      "bytes":  15540,
+                      "sha256":  "cbf92753b380c16dfde29eefe2fd5a3dfe757a99ca8e3ba47ac358d98ca5d0b3"
+                  },
+                  {
+                      "path":  "support/formats/CodenameChart.hpp",
+                      "bytes":  1346,
+                      "sha256":  "88714518e56ea0e348abba845faa247e0b8b03957ee061fb0ccdd6507909bbb2"
+                  },
+                  {
+                      "path":  "support/formats/JsonRead.hpp",
+                      "bytes":  2748,
+                      "sha256":  "bf52affe08cf03d238769c0a0f38e5cddde2d76f8b99b06284c30dbb104f9c93"
+                  },
+                  {
+                      "path":  "support/formats/LegacyChart.cpp",
+                      "bytes":  26766,
+                      "sha256":  "dae6670da86ef08760779f7fa0d8cc76fc1c8afcdee54589664d57afdd548b94"
+                  },
+                  {
+                      "path":  "support/formats/LegacyChart.hpp",
+                      "bytes":  1605,
+                      "sha256":  "7f45c12ff08f285ebf5e6c45621eda1f5c276331e92f549fdce3999718c025f2"
+                  },
+                  {
+                      "path":  "support/formats/PsychSongAudio.hpp",
+                      "bytes":  3301,
+                      "sha256":  "df0386584ccfb9f9625488351cb50a4a9a961b9873efb77ac7d779f098753057"
+                  },
+                  {
+                      "path":  "support/formats/PsychSource.hpp",
+                      "bytes":  16785,
+                      "sha256":  "668ac846c5aff86985eae2ea27e81984713d03b609efda914996e1c36bd4a449"
+                  },
+                  {
+                      "path":  "support/formats/SongMeta.cpp",
+                      "bytes":  8980,
+                      "sha256":  "12d31e2e9c31a53bbaf1afbe755ae755298c837a7ddb11bc3465f2430afa77a2"
+                  },
+                  {
+                      "path":  "support/formats/SongMeta.hpp",
+                      "bytes":  4704,
+                      "sha256":  "fc3e950ff42ccac8142f46673efcce3e95fb9fa2f6139279f4a8aa09e062b83b"
+                  },
+                  {
+                      "path":  "support/formats/SparrowAtlas.cpp",
+                      "bytes":  8745,
+                      "sha256":  "b2f8b6ede76e5fd73526224115f8b82d8b69ed04e34ef25fe305de50df3dc235"
+                  },
+                  {
+                      "path":  "support/formats/SparrowAtlas.hpp",
+                      "bytes":  3012,
+                      "sha256":  "bc02486484c1f75f0cecf02895e5a2c6a1e7414772d7ca5fc1458048e55e3ad2"
+                  },
+                  {
+                      "path":  "support/io/Vfs.cpp",
+                      "bytes":  26603,
+                      "sha256":  "51a70f7fa52dd51b5671e403ee1891c7f636b145c403af80b62428e497925d55"
+                  },
+                  {
+                      "path":  "support/io/Vfs.hpp",
+                      "bytes":  8898,
+                      "sha256":  "c9ce1a1ead0e983036dc2ec3edd26cbd793b70a5385b6cd9adf9a79d1c5f0242"
+                  },
+                  {
+                      "path":  "support/render/CreativeFxShader.hpp",
+                      "bytes":  11536,
+                      "sha256":  "f112fc7d718a2124de1110c1ecc68bddad14929d67c68e42bfe80f6df458bc2e"
+                  },
+                  {
+                      "path":  "support/render/FxShaders.cpp",
+                      "bytes":  15694,
+                      "sha256":  "4ae648caefe4973efed15a265778f5aa1e9e0a0fc301f5292ba2fb5fafb66d31"
+                  },
+                  {
+                      "path":  "support/render/FxShaders.hpp",
+                      "bytes":  4210,
+                      "sha256":  "011c520cc47068bed95ffae24e670645e73cd774400d371f93a8ea2ca489e11a"
+                  },
+                  {
+                      "path":  "support/render/GlRenderer.cpp",
+                      "bytes":  145642,
+                      "sha256":  "b03143165e7b8e7f0e203a686982413d22fd5ff579cb7eaf566b4a431675d2fe"
+                  },
+                  {
+                      "path":  "support/render/GlRenderer.hpp",
+                      "bytes":  32577,
+                      "sha256":  "f29659a2544d6843a829179cdcd96ee7b08b60b12a9f0be2e1b3657ac04a3ddf"
+                  },
+                  {
+                      "path":  "support/render/ShaderLibrary.cpp",
+                      "bytes":  26880,
+                      "sha256":  "499101ec71c3669d1cdd1cf46995e7b6842865ff044f96a3fefec6edc9450527"
+                  },
+                  {
+                      "path":  "support/render/ShaderLibrary.hpp",
+                      "bytes":  6612,
+                      "sha256":  "1f186dd5f783f233a043eeb99fce8b334d7d2266e60d990994644323c5e46302"
+                  },
+                  {
+                      "path":  "support/render/TextRaster.cpp",
+                      "bytes":  21940,
+                      "sha256":  "cf3b23a60b9d1e79c136a20401dc2067da90d053039b6d284798ab4e0047d7c5"
+                  },
+                  {
+                      "path":  "support/render/TextRaster.hpp",
+                      "bytes":  4781,
+                      "sha256":  "286c444cb009c8b8a66f3fd6c6168cd28c5d84c16d7535082e7e517cab5f9cf0"
+                  },
+                  {
+                      "path":  "support/runtime/Scene.cpp",
+                      "bytes":  77431,
+                      "sha256":  "77b9a7a163180539832a2e076963379aabec49b3031e4f6362c090f37485ec26"
+                  },
+                  {
+                      "path":  "support/runtime/Scene.hpp",
+                      "bytes":  26170,
+                      "sha256":  "ee2b32281937ee19fa09f0d7d2a3fed851f3aa041627dffb77576cb2ead06a2c"
+                  },
+                  {
+                      "path":  "test.bat",
+                      "bytes":  178,
+                      "sha256":  "0688f1d3a84644f34631cf6437d638b3209e83a57eb9f8a7ed6d11ae00797aa3"
+                  },
+                  {
+                      "path":  "test-engines.ps1",
+                      "bytes":  2783,
+                      "sha256":  "3c151af5b7ae66ea4f34b9afb8d4c0325d20ac5fc8032478b2c0d5c3f98be4f7"
+                  },
+                  {
+                      "path":  "test-layout.ps1",
+                      "bytes":  2404,
+                      "sha256":  "fb818b2b5752789011f387ce4bd7f7b9881e64ff80ee6c2822aab5eb35836106"
+                  },
+                  {
+                      "path":  "tests/CoreRegression.cpp",
+                      "bytes":  248921,
+                      "sha256":  "901592e10da7557cd3c8477cf53cf576b977fba6e2f0159490b9ee2bc11791a0"
+                  },
+                  {
+                      "path":  "tests/PublicCoreCases.hpp",
+                      "bytes":  9064,
+                      "sha256":  "f88e8dacfca2a5e1fd8727d54ef5fbb10017d3b89184de6c35d9fd722432e275"
+                  },
+                  {
+                      "path":  "tests/PublicMatrix.hpp",
+                      "bytes":  18110,
+                      "sha256":  "08296abe5ecdc0ea0cc541789ed6a1ccff7847305d121f6b077186dca693b017"
+                  },
+                  {
+                      "path":  "tests/PublicMediaCases.hpp",
+                      "bytes":  22840,
+                      "sha256":  "8d7868dd07821884d7d7f3e29fbf647a0d74d67f8347c87ad4cc99fa97c76b5b"
+                  },
+                  {
+                      "path":  "tests/PublicWorkflow.cpp",
+                      "bytes":  14136,
+                      "sha256":  "67122f2a6ff23480eb2f8b6a8d176a3fcc1bb86d9951acf94268f5b97a7e5541"
+                  },
+                  {
+                      "path":  "test-ui.ps1",
+                      "bytes":  3391,
+                      "sha256":  "885fb842c1b40515af46ee76d434c048f747931ff3ac73cc3dd1d4e335ab768e"
+                  },
+                  {
+                      "path":  "test-workflow.bat",
+                      "bytes":  1498,
+                      "sha256":  "a1755cdfb8cf8422a0baeefad827bfb59fcd06027ec6a11b573c3365e958923c"
+                  },
+                  {
+                      "path":  "third_party/imgui/imconfig.h",
+                      "bytes":  12699,
+                      "sha256":  "5755e1b8d6ab0d7811a9d7cac0f509878b51fc5ee77e09bd0f235bcb414971e7"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui.cpp",
+                      "bytes":  1298040,
+                      "sha256":  "0f1c3fe6bb6d25b1b609c15231c50e7c068a76c88cf68e415e8ae8b049a55259"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui.h",
+                      "bytes":  468065,
+                      "sha256":  "a99b41a3d3cb7375ca2b620664df8ebbff28abf45dfc76809282e866a877a09d"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_draw.cpp",
+                      "bytes":  383879,
+                      "sha256":  "3972b7ef530cfde159c6ed59b8ea3c496bc3941126f1bfc4711f6355b03be29b"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_impl_opengl3.cpp",
+                      "bytes":  62258,
+                      "sha256":  "dc2152bb7dbe1acdd55e578ae98135c683cbf97278afc97048dfe61b07f8fd85"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_impl_opengl3.h",
+                      "bytes":  4704,
+                      "sha256":  "f2d77843bd2d067a20c9915d15cec305d5510e4bfee0df0cd474a51278516a14"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_impl_opengl3_loader.h",
+                      "bytes":  41175,
+                      "sha256":  "d3aa3e1f3d23c8c88817832e17d8dd0f2d0b599ae28430067c3fad563b8b7cd5"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_impl_sdl3.cpp",
+                      "bytes":  67190,
+                      "sha256":  "c51764f6a87e795c3844be254739c6b80f5345299972209c0a1578cf7068631d"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_impl_sdl3.h",
+                      "bytes":  4403,
+                      "sha256":  "a7716305e9312d32d7ffb7806555d3ba518c6df6dbf26077d5f6a6e022c6efe5"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_internal.h",
+                      "bytes":  337331,
+                      "sha256":  "77ad450240462bec37e45291abad588388ac23b6847865f6a71ee1af04afd840"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_tables.cpp",
+                      "bytes":  270243,
+                      "sha256":  "10861e7ef0d093b22bfae970d26c1bcc5aba0c0cb1a1285b872e62a5902ad4f0"
+                  },
+                  {
+                      "path":  "third_party/imgui/imgui_widgets.cpp",
+                      "bytes":  562806,
+                      "sha256":  "2a980a2cfc5ad66cf6cb0f63545c4d7bda5ca04d1bca67b516fcd7e21666e955"
+                  },
+                  {
+                      "path":  "third_party/imgui/imstb_rectpack.h",
+                      "bytes":  20346,
+                      "sha256":  "889b396795202d1457560a797a7242e96f6f132d4b88ca2d69be58bf05e1771f"
+                  },
+                  {
+                      "path":  "third_party/imgui/imstb_textedit.h",
+                      "bytes":  60111,
+                      "sha256":  "a985f5fa0ed97353d493b497961e9eef52082edcd045cf6954b69990ec9d0741"
+                  },
+                  {
+                      "path":  "third_party/imgui/imstb_truetype.h",
+                      "bytes":  199503,
+                      "sha256":  "c51a0f7e7ea760f2366bd3752635ec58e21fccfec4a832501639990ba6ce0528"
+                  },
+                  {
+                      "path":  "third_party/imgui/LICENSE.txt",
+                      "bytes":  1083,
+                      "sha256":  "173506a2d6f7fb67990d257fb2507f188690eca39060c39469ae7bef43aae2a3"
+                  },
+                  {
+                      "path":  "third_party/json.hpp",
+                      "bytes":  1039546,
+                      "sha256":  "086ee65083883e83d916160d1545db748925b421aa72b59a1cbfc5b65521896a"
+                  },
+                  {
+                      "path":  "third_party/miniaudio.h",
+                      "bytes":  4108168,
+                      "sha256":  "ac7af4de748b7e26b777f37e01cee313a308a7296a3eb080e2906b320cc55c89"
+                  },
+                  {
+                      "path":  "third_party/miniz/FML-VENDOR.md",
+                      "bytes":  377,
+                      "sha256":  "540022997fe6eddd6d695fc13fe851dde9c39c53a1e8a074dfbd3a05b873b909"
+                  },
+                  {
+                      "path":  "third_party/miniz/LICENSE",
+                      "bytes":  1184,
+                      "sha256":  "0115478d567121238cf6cc1c0c361926cf07a49d9e4c9e66da97fac6a01646b3"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz.c",
+                      "bytes":  26637,
+                      "sha256":  "6a0314b68c9b804f33e27d89aa3144ef7724fd787043ba8c95d1b19be2d64afd"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz.h",
+                      "bytes":  28905,
+                      "sha256":  "f4a1c9924def38eb2da543add6077c90acae3f3e8775d348abc953ff659b5f89"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_common.h",
+                      "bytes":  2618,
+                      "sha256":  "fa5bf07d72efa51640f9d8ee11431fd2538e6218aea9e9328905edeb54187997"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_export.h",
+                      "bytes":  126,
+                      "sha256":  "358f75ba24138c6c6316102c5c964f078e43d0108aa3a8cf21d3ec95a7718d48"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_tdef.c",
+                      "bytes":  77128,
+                      "sha256":  "69e4d7c2774708cf695cec4ace4bfb0bc3d00479c615d62fdacbe4a1669239b0"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_tdef.h",
+                      "bytes":  10932,
+                      "sha256":  "13574142e909c529c3c08bbd76be8ac23939370e08fdc9837e635b2e00b4883d"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_tinfl.c",
+                      "bytes":  41415,
+                      "sha256":  "457e745d8fef9657b07e4c641548b49f029d54dd70d3fc83568253f51194cda4"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_tinfl.h",
+                      "bytes":  8845,
+                      "sha256":  "ef18f995b0151095a0e9ed718114bd03437c607b302ee979a9d371f157bacf8a"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_zip.c",
+                      "bytes":  213144,
+                      "sha256":  "c89273ef53c5ecb5170f18fb3c3e32da0255e5925949866c50a04d136c547ae3"
+                  },
+                  {
+                      "path":  "third_party/miniz/miniz_zip.h",
+                      "bytes":  27196,
+                      "sha256":  "eff19da6bcd7e127bb4447bf67a6093a6e589ee496fd251a444ec3b58c1d86f4"
+                  },
+                  {
+                      "path":  "third_party/pugiconfig.hpp",
+                      "bytes":  3060,
+                      "sha256":  "e6c51fbc9a765608bd214ea47d229d3bbd6b650036cdffc94b96b498c202495c"
+                  },
+                  {
+                      "path":  "third_party/pugixml.cpp",
+                      "bytes":  363122,
+                      "sha256":  "5a8e166d87dabaf67047d4fa124b06a9f1c9b36236fd5de5fbf054f9c0767a2c"
+                  },
+                  {
+                      "path":  "third_party/pugixml.hpp",
+                      "bytes":  57223,
+                      "sha256":  "0b7c94701df3d50981ffafe57f177c77b940e347c6e5d01073e4161f61299212"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL.h",
+                      "bytes":  2986,
+                      "sha256":  "d41d33f800f843362af4ec6e22b49691f30d65535ee57c5190429ea00e5136b4"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_assert.h",
+                      "bytes":  28361,
+                      "sha256":  "0832e7ba5084c0aaaee64bfaed031b05be07bcdd399e28f69c04c9bbd2dbf19a"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_asyncio.h",
+                      "bytes":  23450,
+                      "sha256":  "acec5e4c8cbcfe8dc371adb63ad986ff3521685bca9b683ac4cc18ed13b1e840"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_atomic.h",
+                      "bytes":  26048,
+                      "sha256":  "42b130672823adfe1225f7b68d65919444a21b618c86b40e9d44e027db29de9e"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_audio.h",
+                      "bytes":  98065,
+                      "sha256":  "244fa8da51ac74d9c01414de18e35ce4371c2e15250c8e450ffe4d67d62d16f3"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_begin_code.h",
+                      "bytes":  18082,
+                      "sha256":  "00e0196d5356ca8c38557d8d473c78735aacb4412ba0c6d1012e8df387270e28"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_bits.h",
+                      "bytes":  4352,
+                      "sha256":  "028c845f51fe13238072778a282514f824d24622f4af0b0af63a3811271d0912"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_blendmode.h",
+                      "bytes":  9342,
+                      "sha256":  "3a3e25b43bb2ab520b59a50c101a06f4ce17af27e2250a4dfd6cb296c973c3d1"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_camera.h",
+                      "bytes":  21109,
+                      "sha256":  "e317c60e7bff8db50358d021813661a9c7de36ac11f655f21fb45b2cf3b3cd2a"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_clipboard.h",
+                      "bytes":  12441,
+                      "sha256":  "6351b0b419168c98f95d2f131bc2f2208fbe0171ab32085488d25adffe8f6e37"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_close_code.h",
+                      "bytes":  1567,
+                      "sha256":  "67aeed66c5310ac5dc62bc0f1c03713719f28529033cde6bb668d5964d179c27"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_copying.h",
+                      "bytes":  984,
+                      "sha256":  "b5113ee040521690fecda79e1e00d078166d2ec2632153a8ee498f3bcbf40886"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_cpuinfo.h",
+                      "bytes":  11359,
+                      "sha256":  "9307452eccae54d8bf35dff79daa2e804e29f244e2208c5e7932dfadcf3e8c12"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_dialog.h",
+                      "bytes":  14538,
+                      "sha256":  "b81aaf26316299bd9bfb1017c48a5d4b6fe525c64d0058821b70b3223df579db"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_dlopennote.h",
+                      "bytes":  8786,
+                      "sha256":  "10449e075868d279114658d3024300b1e59d42ec98cb2374949ba18478544df4"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_egl.h",
+                      "bytes":  108941,
+                      "sha256":  "f477f952afad531447dc644d95fb564505d4c2c11d3e246a1affbceabaf779bc"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_endian.h",
+                      "bytes":  20162,
+                      "sha256":  "19405eb59c29e5a4eb69afdcf3c38bd678fcf5660a529ec0b8015a82ba602d91"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_error.h",
+                      "bytes":  7095,
+                      "sha256":  "c3fb65e2899d341f84ab3a0bbe99646d51efab252290fff28ce36ffc7b5f9a34"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_events.h",
+                      "bytes":  71634,
+                      "sha256":  "bb51b7035b41462b8040ce17677fddc90dd0a1ff3ecd8e97086f474f0be9baa1"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_filesystem.h",
+                      "bytes":  22921,
+                      "sha256":  "594df8cacd921611186fe9251c4771bb5a9733d36bdd3e821c2fd9382857097a"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_gamepad.h",
+                      "bytes":  59615,
+                      "sha256":  "55350e07e9569d70a25643e578edb53bce60867aebb2a3550b00250033f60a8b"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_gpu.h",
+                      "bytes":  181916,
+                      "sha256":  "209f37565e01ec0231b4f97a4ca24d157efa33a6454753fcdc255fdb43f54553"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_guid.h",
+                      "bytes":  3430,
+                      "sha256":  "556ed320776337ef8af8fada3e3fe4a795dddc2abfb7f4813830acb3272d879e"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_haptic.h",
+                      "bytes":  45075,
+                      "sha256":  "b44f466ce6ffc44f4390c02c0688b9462ea48c0150373a4187c9c4eaf3829e95"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_hidapi.h",
+                      "bytes":  22043,
+                      "sha256":  "129fcc4b99aca44a30dccb0d1c653c1a0b018f3e57d3547c414c81db7de508af"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_hints.h",
+                      "bytes":  169611,
+                      "sha256":  "55e08ab2d465c8741244a3ea02dca17de001360302b2876a5b295662997cb2a2"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_init.h",
+                      "bytes":  20850,
+                      "sha256":  "54f65b10221de0e1ee59b99d01661a56472bc9abb05690c0d5bd787670965a8d"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_intrin.h",
+                      "bytes":  13860,
+                      "sha256":  "66f00cfb3259e0207d32d608bc326f2aeb25fc96d5223e26ff5501d0efc5bd82"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_iostream.h",
+                      "bytes":  53548,
+                      "sha256":  "81f8719b82f61d00a96dac7b97313115172e82e05361878dbcbaad96e334aed8"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_joystick.h",
+                      "bytes":  51596,
+                      "sha256":  "de936f3314f39bb02aaf3afc758aa3af7cf5cd2152c2265369d7dc5abca1f1bb"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_keyboard.h",
+                      "bytes":  21492,
+                      "sha256":  "b7664fb34abcf86f669edf4fd5fdef2d58fa025f49d91b4743888f192c519d8d"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_keycode.h",
+                      "bytes":  26697,
+                      "sha256":  "82c54f5b995c952d6bda3dae6a409d0115b604ee17da3c77de8fe62dbb9c8e60"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_loadso.h",
+                      "bytes":  5182,
+                      "sha256":  "14246190e220d2ec52c40a586ceb571ee928215d09e1d82b260675da3a94634f"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_locale.h",
+                      "bytes":  4524,
+                      "sha256":  "a65538f0a78a6fc5477c41a0ef359c8b57eacf03c2998d48cac48dd7645bd6f8"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_log.h",
+                      "bytes":  16982,
+                      "sha256":  "15f28418f4fe636b41f78541bd73217c32ec0e11a2ef0f39c2ba8033fc3702cf"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_main.h",
+                      "bytes":  27472,
+                      "sha256":  "cc1b4a1ad67b6e090951babc392548ce9cd7e5a33618f262f567a51659239ff9"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_main_impl.h",
+                      "bytes":  5846,
+                      "sha256":  "e2084e6e8ca5ef1c6948ae2de406e82c0df45bf910c90260433abaa24f232970"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_messagebox.h",
+                      "bytes":  8178,
+                      "sha256":  "124139156dc7887b3f6fc5f8dfd45b9711d4d834204baa20dec89aebba522918"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_metal.h",
+                      "bytes":  3354,
+                      "sha256":  "0689f189d73dc0b9b314013f77505cbeca10d96b23556a057ee8d676b46d8983"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_misc.h",
+                      "bytes":  2919,
+                      "sha256":  "3302ddfec11a0f2a1d9e0eda88f6f23ca189cf93d401a01ca826bfcad160e6ec"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_mouse.h",
+                      "bytes":  31719,
+                      "sha256":  "6caff19a4841afc5cab4254e94a73de874a331a6539f87d2d2c61a7c5e5d7e5b"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_mutex.h",
+                      "bytes":  36760,
+                      "sha256":  "c0218aeee31ba40f4f2990dfff5184d22cdd39907da834027d31f75f3a50a32e"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_oldnames.h",
+                      "bytes":  80730,
+                      "sha256":  "59cb5dde7a441d0b208c52f12f73a949dd747ce6b053f31b356cb64cef20e6dc"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengl.h",
+                      "bytes":  126683,
+                      "sha256":  "a8e7681bfff83d2156b4f088b792789c30da791ce4581c7ae64545e80a3522a1"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengl_glext.h",
+                      "bytes":  864070,
+                      "sha256":  "1abb28891c9b0661b6ff3749de2671da5fe12beb5bcb1833b2d6bdf5c89ecdf8"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengles.h",
+                      "bytes":  1244,
+                      "sha256":  "d0bec38800302d14ae08dfd3afc3a26d409c95555d77ace5efb64ebfaecb2b08"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengles2.h",
+                      "bytes":  1615,
+                      "sha256":  "cf3445a371fbe8ed9d1c03c929e050d21e450e853f9c9cde8ed3f7dedb442552"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengles2_gl2.h",
+                      "bytes":  42938,
+                      "sha256":  "d6ec44b1d73f3afce3a20ac6976db7fb3dac656c5190f0b563e4ce90d79a15aa"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengles2_gl2ext.h",
+                      "bytes":  241221,
+                      "sha256":  "4fc5b0034dcde9c125922e3e70d01489a6b335076856ee660294e1a6305a3719"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengles2_gl2platform.h",
+                      "bytes":  646,
+                      "sha256":  "4779be999acd1904458238f09c86983b7960ac40e612e05db2db97db615f1e0f"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_opengles2_khrplatform.h",
+                      "bytes":  11131,
+                      "sha256":  "7b1e01aaa7ad8f6fc34b5c7bdf79ebf5189bb09e2c4d2e79fc5d350623d11e83"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_pen.h",
+                      "bytes":  8289,
+                      "sha256":  "30cf6dacd1a7ce079c4c2e53df32f85ecdf1f4056fce08089abc26208bb32055"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_pixels.h",
+                      "bytes":  59712,
+                      "sha256":  "a4c17ec0b7bd9ddd631cad62cb38bae7d3e1f2b9522914a816a5e86433691ade"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_platform.h",
+                      "bytes":  1963,
+                      "sha256":  "9a95a10a7f3c3d8f4958ebaded5c5e3b154f75c7351b1002e32429bc7dd28501"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_platform_defines.h",
+                      "bytes":  12169,
+                      "sha256":  "ab5692c00d4aca81466688a6c9abe7f5154070b6118f48a67490d81dff6ad36e"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_power.h",
+                      "bytes":  4229,
+                      "sha256":  "ed0346c3c7454da4e305feb5a650a0859053442c68b388dc60848e002b86f3e2"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_process.h",
+                      "bytes":  18490,
+                      "sha256":  "a52b5af99b1130189c3510269ba73d8288b55feb4b7086a1614cfad395794655"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_properties.h",
+                      "bytes":  20371,
+                      "sha256":  "f66e621b2b9d7d9c8126bfbc31a50f90f515ddf9e090b6e1cc6ea24b343bdd4a"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_rect.h",
+                      "bytes":  19081,
+                      "sha256":  "f5a5c39fbffd41eadbeb50e2ddfa4ffe655ff14241a23e4f20de4cce48e82d6e"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_render.h",
+                      "bytes":  127837,
+                      "sha256":  "29b5c4a477bf5d20043ed58cd3d32cc71d2ea435edde85cbfeeee94d608d626f"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_revision.h",
+                      "bytes":  2043,
+                      "sha256":  "86c07ade111c1cb8f89e2d2d57cbebd0372d203bc104f4b6275e2f9e108a0b7a"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_scancode.h",
+                      "bytes":  17246,
+                      "sha256":  "d5e3bb25b523b61ed354189919f2bcb058f0f2fa08e0529ce8e21480937c8ca5"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_sensor.h",
+                      "bytes":  10498,
+                      "sha256":  "8c91002fc95799b820d07671541c97c012f77bcf8eb16f624e717142fa051c72"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_stdinc.h",
+                      "bytes":  205971,
+                      "sha256":  "e0d5fca5b28872c2bb67daed0d4c3ad38d349a5a790b85193f02b917f941ce35"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_storage.h",
+                      "bytes":  25967,
+                      "sha256":  "fbb7342d44526e0bb683fb645910eb1d3fcffd1468b9c823b0654ef424ba60f0"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_surface.h",
+                      "bytes":  70993,
+                      "sha256":  "8c4c6f4127b663b38167be0e431a6015533d9b792f8df42e213b8ec9a1d3ba96"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_system.h",
+                      "bytes":  30121,
+                      "sha256":  "81d78f7a087bb1d122565b2310ad139a3672d372e3d1c4a615b00c2403edeb90"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test.h",
+                      "bytes":  1954,
+                      "sha256":  "6d16a15e84da000b0015aebd50ded8f30e519ebcbc02f02a0b8c0f0079cbd86e"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_assert.h",
+                      "bytes":  3196,
+                      "sha256":  "016c81211ca7d724e7482d55914900ec25d72efe3117e363f069aa7ae167866a"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_common.h",
+                      "bytes":  8804,
+                      "sha256":  "8c0c8f322c93a76beebcb69bd73526a0cd8841532c8f8926e61956b8ae881623"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_compare.h",
+                      "bytes":  2778,
+                      "sha256":  "d4f06234ec5734cea2ecfe0513cb6ecd1c7e13b3bd04a5f5940763dfd0b9c140"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_crc32.h",
+                      "bytes":  3614,
+                      "sha256":  "7d5b4fc7c7bea9e7355198c1b479700ce078a0e2a6aad4ef1cdd767c06407c16"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_font.h",
+                      "bytes":  5505,
+                      "sha256":  "14079a136e0399c71e6b148ce80c6a9b0e392cc1851c6ce8ef7736d4b0c9b42b"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_fuzzer.h",
+                      "bytes":  13205,
+                      "sha256":  "ad78531a4fe77dbff98fe0d9183ee09622a322d0ecff27aa1fdc07acba99d3b1"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_harness.h",
+                      "bytes":  5374,
+                      "sha256":  "81f1fe6472b312b3e0a3394e2cc39ac84ef06655dbf3c1265c5bc01a7c0c0c06"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_log.h",
+                      "bytes":  2571,
+                      "sha256":  "001e91743189c4468dd3e93afcb4ccd55f09bd28ed794611323bee41530c7ff7"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_md5.h",
+                      "bytes":  4633,
+                      "sha256":  "6df30087ddab5d65f291d7f3faa7000eb88ba64c66e971112a8adaf085e9b6dd"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_test_memory.h",
+                      "bytes":  1942,
+                      "sha256":  "70cf38368fbf637e191933138a9663097ed22579b73b2382d3290b753c8300c6"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_thread.h",
+                      "bytes":  23725,
+                      "sha256":  "b5f2b2d88729338cb0c1e95398f112bccbb343fcf960e2dae080e3695be1be76"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_time.h",
+                      "bytes":  8739,
+                      "sha256":  "db6dd02434f0b099748e728d1145486888659087e7742f7367da9e4d1120c771"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_timer.h",
+                      "bytes":  14683,
+                      "sha256":  "60a809df30e0c549a91b986f517ff94515ab80a529db95d97655a2c417f0f927"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_touch.h",
+                      "bytes":  6353,
+                      "sha256":  "e69c97c2fc210f1e8eab7199173097b4f4196a3ea4a39e1d08a48a145cc92132"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_tray.h",
+                      "bytes":  17471,
+                      "sha256":  "00fe9d97cef15acc3adb18a85689a619178c74df12990090da475c4f7e0e12a1"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_version.h",
+                      "bytes":  5810,
+                      "sha256":  "07830cb7cb8cb86db52eb00c07b95827385c340bc0d667861cbbb89c360678c1"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_video.h",
+                      "bytes":  142159,
+                      "sha256":  "e4a25b506dfb5b0657edc264b7130cfea3bad0abc0265e280e046f9ec4dcaeaf"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/include/SDL3/SDL_vulkan.h",
+                      "bytes":  11897,
+                      "sha256":  "a0d1b8c6a2a7982e419dbdb8ea60fce09e99390238634ca117d82442953a4e1c"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/lib/x64/SDL3.dll",
+                      "bytes":  2842624,
+                      "sha256":  "9fa7bcb4c3667bfe4cf5e5b740a1da708151af0d499c2d0afee50c9874ba181c"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/lib/x64/SDL3.lib",
+                      "bytes":  283572,
+                      "sha256":  "237e514cf888a996fe088338dffaa25a9f6bdc1a0952e898fa4df00a0967d182"
+                  },
+                  {
+                      "path":  "third_party/SDL3-3.4.14/LICENSE.txt",
+                      "bytes":  884,
+                      "sha256":  "1c040b8271b37e5076359f8fd54240e371114112924d2df81ef87c7d6a1dfdfd"
+                  },
+                  {
+                      "path":  "third_party/stb_image.h",
+                      "bytes":  283010,
+                      "sha256":  "594c2fe35d49488b4382dbfaec8f98366defca819d916ac95becf3e75f4200b3"
+                  },
+                  {
+                      "path":  "third_party/stb_image_write.h",
+                      "bytes":  71221,
+                      "sha256":  "cbd5f0ad7a9cf4468affb36354a1d2338034f2c12473cf1a8e32053cb6914a05"
+                  },
+                  {
+                      "path":  "third_party/stb_vorbis.c",
+                      "bytes":  192790,
+                      "sha256":  "4c7cb2ff1f7011e9d67950446b7eb9ca044f2e464d76bfbb0b84dd2e23e65636"
+                  },
+                  {
+                      "path":  "THIRD_PARTY_NOTICES.md",
+                      "bytes":  1199,
+                      "sha256":  "5bd03799a6c27f3c4c53ce0cc1a971edf3fce3fd698d3c706f42143a3c359966"
+                  }
+              ]
+}
