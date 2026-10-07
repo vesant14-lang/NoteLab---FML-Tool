@@ -21,9 +21,10 @@ Ideas, no funciones anunciadas como implementadas.
 - Presets de importación/rangos y multi-selección de asignaciones.
 - Loop A–B para probar un tipo custom o receptor en un fragmento del chart.
 - Comparación antes/después y export del diff de configuración.
-- Auto-recuperación de sesión, sin sobrescribir el proyecto guardado.
+- Selector de recuperaciones: listar las copias pendientes, con fecha y origen;
+  la recuperación y su separación de la sesión activa ya existen en la 1.0.4a.
 - Progreso/cancelación del escaneo y del packing grande; catálogo en segundo plano.
-- Revisión de dependencias antes del export y cola de varios paquetes.
+- Cola de varios paquetes que reutilice la revisión de dependencias existente.
 - Acciones/atajos de offset y alineación en el inspector.
 
 ## Ampliaciones
@@ -35,5 +36,5 @@ Ideas, no funciones anunciadas como implementadas.
 - Sesiones con mezclas diferentes por jugador/rival sin perder los estilos fuente.
 - Casos de integración automática en mods de prueba de los tres motores.
 
-Primero portabilidad/recuperación y presets de composición. Después layout
+Primero portabilidad, selector de recuperaciones y presets de composición. Después layout
 exportable y multikey, porque requieren modelos y pruebas más amplios.

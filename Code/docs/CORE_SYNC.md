@@ -1,8 +1,9 @@
 # Keeping Note Lab and FML in sync
 
-This is a standalone Note Lab repository, **not a copy of the FML suite or a
-second engine implementation**. Behavior is preserved from the shared snapshot;
-the folder layout and relative includes are adapted for this smaller repository.
+This standalone repository derives its note-editing core from FML. Its folder
+layout and relative includes are adapted for Note Lab; release-specific changes
+are listed below. Synchronization requires reviewing those changes, not copying
+the standalone over the suite.
 
 | Standalone path | Original FML path |
 | --- | --- |
@@ -59,6 +60,49 @@ FML can consume the resource/export modules without adopting their positioning.
 files and SHA-256 values. For moving improvements back to a different FML
 checkout, compare its baseline first, merge only related changes and rebuild
 the actual consumers. A packaged snapshot is not an automatic suite release.
+
+## 1.0.4a
+
+The Paint host now provides twelve rasterized figures, remembered outline/pixel
+options per figure, a thumbnail picker and placement on a new layer. The
+geometry belongs to `SpriteShapes.hpp`; picker, placement and undo orchestration
+belong to `SpriteEditor.hpp`. `PublicSpriteShapeCases.hpp` and the native notes
+UI suite cover these flows. These are standalone UI changes, not new engine
+export formats.
+
+- `NoteExport`: `noteExportNamesCollide` shares case-insensitive export-name
+  and Windows filename collision checks with creation and Save in mod.
+- `NoteProject`: embedded block metadata optionally stores `noteType`; readers
+  still accept older metadata and re-embedding retains a known owner.
+- Host changes in `main.cpp`, `NewNote.hpp` and `ModSave.hpp` preserve queued
+  session recovery, verify script ownership and compare complete visual
+  definitions when deciding whether a note needs saving. These are separate
+  from the reusable core helpers.
+- `tests/SaveSafetyCases.hpp` adds native workflow regressions for all three
+  engine formats and recovery; `CoreRegression.cpp` covers the shared helpers.
+
+Original baseline hashes in `FML_SYNC_MAP.json` remain unchanged: they describe
+the original FML snapshot, not the current release inventory.
+
+## 1.0.4
+
+Shared-core additions to review for FML:
+
+- `NoteProject`: `embedProgramInScript` / `readEmbeddedProgram` keep a note's
+  blocks inside its own script, in a comment the engine ignores (`--[[ ... ]]`
+  in Lua, `/* ... */` in HScript): a `notelab-blocks 1` marker, the SHA-256 of
+  the code outside the comment (CRLF and trailing blank lines do not count) and
+  the program plus the written files as base64 JSON. Code added before *or
+  after* the comment marks the script as edited by hand. Re-embedding replaces
+  the old comment instead of stacking one more.
+- `NotePreview`: `demoPatternOf` (seven built-in demo patterns),
+  `CustomPattern` on a sixteenth-note grid, `customPatternNotes` and
+  `patternFromNotes`.
+- Core regressions: «Bloques dentro del script» and «Patrones de prueba» in
+  `tests/CoreRegression.cpp` (FML: `fml_notelabcheck.cpp`).
+
+`src/ModSave.hpp` is a new interface file (saving a note into the open mod
+folder, the overview of one's own notes); it is mapped with a null baseline.
 
 ## 1.0.3
 

@@ -515,6 +515,137 @@ std::vector<PreviewNote> demoPattern(double bpm, double& lengthMs) {
 
 namespace {
 
+void sortNotes(std::vector<PreviewNote>& notes) {
+    std::stable_sort(notes.begin(), notes.end(), [](const PreviewNote& a, const PreviewNote& b) {
+        if (a.timeMs != b.timeMs) return a.timeMs < b.timeMs;
+        if (a.strumLine != b.strumLine) return a.strumLine < b.strumLine;
+        return a.lane < b.lane;
+    });
+}
+
+}  // namespace
+
+std::vector<PreviewNote> demoPatternOf(int kind, double bpm, double& lengthMs, std::uint32_t seed) {
+    if (kind <= 0 || kind >= kDemoKinds) return demoPattern(bpm, lengthMs);
+    const double beat = 60000.0 / std::max(30.0, bpm);
+    const double lead = beat * 2.0;
+    std::vector<PreviewNote> notes;
+    auto add = [&](int line, int lane, double beats, double holdBeats = 0.0) {
+        PreviewNote note;
+        note.strumLine = line;
+        note.lane = ((lane % 4) + 4) % 4;
+        note.timeMs = lead + beats * beat;
+        note.sustainMs = holdBeats > 0.0 ? holdBeats * beat : 0.0;
+        notes.push_back(note);
+    };
+    std::uint32_t state = seed ? seed : 1u;
+    auto next = [&](std::uint32_t range) {
+        state = state * 1664525u + 1013904223u;
+        return static_cast<int>((state >> 8) % range);
+    };
+    for (int bar = 0; bar < 4; ++bar) {
+        const int line = bar % 2;
+        const double start = bar * 4.0;
+        switch (kind) {
+            case 1: {   // escalera: corcheas que suben y bajan
+                static const int stairs[8] = {0, 1, 2, 3, 3, 2, 1, 0};
+                for (int k = 0; k < 8; ++k) add(line, bar % 2 ? 3 - stairs[k] : stairs[k], start + k * 0.5);
+                break;
+            }
+            case 2: {   // repeticiones: tres semicorcheas en el mismo carril y un hueco
+                for (int k = 0; k < 16; ++k)
+                    if (k % 4 != 3) add(line, k / 4 + bar, start + k * 0.25);
+                break;
+            }
+            case 3: {   // acordes: de dos en un compas, de tres en el siguiente
+                static const int pairs[4][2] = {{0, 3}, {1, 2}, {0, 1}, {2, 3}};
+                static const int triples[4][3] = {{0, 1, 2}, {1, 2, 3}, {0, 2, 3}, {0, 1, 3}};
+                for (int b = 0; b < 4; ++b) {
+                    if (bar % 2 == 0)
+                        for (int lane : pairs[b]) add(line, lane, start + b);
+                    else
+                        for (int lane : triples[b]) add(line, lane, start + b);
+                }
+                break;
+            }
+            case 4: {   // sostenidos largos, con toques en los otros carriles
+                add(line, bar, start, 1.5);
+                add(line, bar + 2, start + 2.0, 1.5);
+                add(line, bar + 1, start + 1.0);
+                add(line, bar + 3, start + 3.0);
+                add(line, bar + 1, start + 3.5);
+                break;
+            }
+            case 5: {   // rafaga: semicorcheas sin repetir carril
+                int last = -1;
+                for (int k = 0; k < 16; ++k) {
+                    int lane = next(4);
+                    if (lane == last) lane = (lane + 1 + next(3)) % 4;
+                    last = lane;
+                    add(line, lane, start + k * 0.25);
+                }
+                break;
+            }
+            case 6: {   // aleatorio: corcheas con algun sostenido y algun acorde
+                for (int k = 0; k < 8; ++k) {
+                    if (next(10) < 2) continue;   // un silencio de vez en cuando
+                    const int lane = next(4);
+                    const bool hold = next(4) == 0;
+                    add(line, lane, start + k * 0.5, hold ? 0.5 * (1 + next(3)) : 0.0);
+                    if (!hold && next(7) == 0) add(line, lane + 1 + next(3), start + k * 0.5);
+                }
+                break;
+            }
+            default: break;
+        }
+    }
+    sortNotes(notes);
+    lengthMs = lead + 16.0 * beat + beat * 2.0;
+    return notes;
+}
+
+std::vector<PreviewNote> customPatternNotes(const CustomPattern& pattern, double bpm, double& lengthMs) {
+    const double beat = 60000.0 / std::max(30.0, bpm);
+    const double lead = beat * 2.0;
+    const int bars = std::clamp(pattern.bars, 1, kPatternMaxBars);
+    const int steps = bars * 16;
+    std::vector<PreviewNote> notes;
+    for (const PatternNote& one : pattern.notes) {
+        if (one.step < 0 || one.step >= steps || one.lane < 0 || one.lane > 3 || one.side < 0 || one.side > 1) continue;
+        if (notes.size() >= kPatternMaxNotes) break;
+        PreviewNote note;
+        note.strumLine = one.side;
+        note.lane = one.lane;
+        note.timeMs = lead + one.step * beat / 4.0;
+        note.sustainMs = std::clamp(one.hold, 0, steps - one.step) * beat / 4.0;
+        notes.push_back(note);
+    }
+    sortNotes(notes);
+    lengthMs = lead + bars * 4.0 * beat + beat * 2.0;
+    return notes;
+}
+
+CustomPattern patternFromNotes(const std::vector<PreviewNote>& notes, double bpm, int bars) {
+    CustomPattern pattern;
+    pattern.bars = std::clamp(bars, 1, kPatternMaxBars);
+    const double beat = 60000.0 / std::max(30.0, bpm);
+    const double lead = beat * 2.0;
+    const int steps = pattern.bars * 16;
+    for (const PreviewNote& note : notes) {
+        const int step = static_cast<int>(std::lround((note.timeMs - lead) / (beat / 4.0)));
+        if (step < 0 || step >= steps || note.lane < 0 || note.lane > 3) continue;
+        PatternNote one;
+        one.side = note.strumLine == 0 ? 0 : 1;
+        one.lane = note.lane;
+        one.step = step;
+        one.hold = std::max(0, static_cast<int>(std::lround(note.sustainMs / (beat / 4.0))));
+        pattern.notes.push_back(one);
+    }
+    return pattern;
+}
+
+namespace {
+
 void pushSplash(PreviewState& state, int strumLine, int lane, double startMs, size_t note) {
     state.splashSeed = state.splashSeed * 1664525u + 1013904223u;
     PreviewState::Splash splash;

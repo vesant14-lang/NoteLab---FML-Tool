@@ -123,4 +123,24 @@ std::optional<NoteStyle> readStyle(const std::string& text);
 std::string writeProgram(const BlockProgram& program);
 BlockProgram readProgram(const std::string& text);
 
+// Una nota guardada en su mod lleva sus bloques dentro de su propio script, en
+// un comentario al final que el motor ignora (pedido del autor, 6 oct 2026): al
+// abrir el mod otra vez, sin proyecto y en cualquier PC, vuelve con sus bloques.
+// El comentario es `--[[ ... ]]` en un .lua y `/* ... */` en .hx/.hxc; dentro
+// van la huella del script (para saber si luego se edito a mano) y, en base64,
+// el programa y los archivos que se escribieron con la nota (rutas del mod).
+std::string embedProgramInScript(const std::string& script, const std::string& scriptPath,
+                                 const BlockProgram& program, const std::vector<std::string>& files,
+                                 const std::string& noteType = {});
+
+struct EmbeddedProgram {
+    bool found = false;      // el script lleva los bloques de Note Lab
+    bool edited = false;     // el script cambio fuera de Note Lab despues de guardarse
+    BlockProgram program;
+    std::vector<std::string> files;
+    std::string noteType;
+    std::string body;        // el script sin el comentario de los bloques (lo de antes y lo de despues)
+};
+EmbeddedProgram readEmbeddedProgram(const std::string& script);
+
 }  // namespace fml::notelab

@@ -1344,6 +1344,16 @@ std::string exportName(const std::string& text) {
     return out.empty() ? std::string("notelab") : out;
 }
 
+bool noteExportNamesCollide(const std::string& first, const std::string& second) {
+    auto folded = [](std::string value) {
+        for (char& c : value) c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+        return value;
+    };
+    bool changed = false;
+    return folded(first) == folded(second) || exportName(first) == exportName(second) ||
+           folded(typeFileName(first, changed)) == folded(typeFileName(second, changed));
+}
+
 ExportPackage buildExport(const NoteStyle& style, const ExportOptions& options, const ExportIo& io) {
     ExportPackage package;
     package.source = style.engine;

@@ -10,9 +10,9 @@
 | `NotePreview` | Pure render-list builder, notes, receptors, holds, splashes, judgement/combo preview and explicit receptor fallback. |
 | `NoteSongs` | Song/chart/audio catalog, classic and absolute-lane Psych parsing, native type patching and protected chart saves/backups. |
 | `NoteTypes` | Custom-note catalog, deterministic distribution and preview bot rules. |
-| `NoteProject` | Versioned `.fmlnote`, styles, drawn-piece recipes and drawing-file references, programs, imports and bounded atomic writes. |
+| `NoteProject` | Versioned `.fmlnote`, styles, drawn-piece recipes and drawing-file references, programs, imports, bounded atomic writes and embedded blocks with optional note ownership. |
 | `NoteImage` | PNG decode/encode, crops, transforms, recoloring and packing. |
-| `NoteExport` | Engine packages, coverage notes, structural re-reading, guarded folder/ZIP publication and bounded layered `.nlsprite` archives. One-frame V-Slice hit-receptor adaptation belongs here. |
+| `NoteExport` | Engine packages, coverage notes, structural re-reading, guarded folder/ZIP publication, shared note-name collision checks and bounded layered `.nlsprite` archives. One-frame V-Slice hit-receptor adaptation belongs here. |
 | `NoteBlocks` | Block graph, definitions, validation, repair, presets and engine code generation. |
 | `NoteCode` | Code synchronization, drafts/comments, syntax-color classification and bounded native note-script import. Recognized event statements become blocks; engine-specific lines and unsupported functions are explicit. |
 | `NoteInstall` | Mod/base-game layouts, packs, addons and safe base discovery. |
@@ -32,14 +32,15 @@ use vendored decoding/rasterization libraries through explicit inputs.
 | `BlockCanvas.hpp/.cpp` | Block canvas interaction, layout, connections and visual editing. |
 | `CodeEditor.hpp` | Native text editing with a syntax-colored overlay and line numbers. |
 | `CustomCreator.hpp` | Advanced resource inspector, roles, grid/crops/order and creation UI. |
+| `ModSave.hpp` | «Save in the mod»: where an engine looks for a note in the open mod folder, the file plan (new / updated / unchanged / replaces), atomic writes, the note's state (only in Note Lab, saved, changes, edited by hand), «Your notes» and the quit prompt's pending list. The blocks travel inside the script (`NoteProject` `embedProgramInScript`). |
 | `NewNote.hpp` | Single-note assistant (cards, one «Create note» and the «Ready» next-steps page), behavior/look/sound/bot setup and engine-specific code-only templates. |
-| `SpriteEditor.hpp` | Layered drawing UI, «How do you want to start?» screen, free canvases sent to the sheet, tools (mirror, pixel art, shortcuts), timeline, selection/clipboard, tabs, final PNG and drawing-file orchestration. |
-| `SpriteShapes.hpp` | Drawing geometry, sheet/cell and free-canvas layouts, distortion-free fitting into a cell, pixel brush, layer compositing, shapes and code-rendered presets used by the sprite editor. |
-| `Tutorial.hpp` | Seven in-workspace guides, task detection, focus hints, block demonstration and tutorial cues (silenced in 1.0.3 by `BuildPolicy`). |
+| `SpriteEditor.hpp` | Layered drawing UI, drawing start screen, free canvases, tools, twelve-figure thumbnail picker, per-figure outline/pixel settings, placement on a new layer, timeline, selection/clipboard, tabs, final PNG and drawing files. |
+| `SpriteShapes.hpp` | Drawing geometry, sheet/cell and free-canvas layouts, distortion-free fitting, pixel brush, layer compositing, twelve rasterized figures and code-rendered presets. |
+| `Tutorial.hpp` | Seven in-workspace guides, task detection (what is already done is jumped over at the start), going back to a passed mission from «All missions» or the progress boxes, focus hints (also inside «New custom note» and «Save in the mod»), block demonstration and tutorial cues (silenced since 1.0.3 by `BuildPolicy`). |
 | `ModResources.hpp` | General library and docked Library/In use sidebar, categorized cards/status, contextual actions, explicit media preview, import/destination dialog and typed-slot assignment. Shared resource/import audio controls reuse AudioEngine for full-length audition, opt-in Loop, speed, stereo balance and A–B ranges. |
 | `SongTools.hpp` | Distribution saving and preview-bot dialogs. |
 | `StyleComposer.hpp` | Source/group picker, owned cross-source media mounting and composition UI. The composition rules themselves stay in `NoteStyle`. |
-| `BuildPolicy.hpp` | Build version and independent audio policies: general playback on, block-editor cues off, tutorial cues off in 1.0.3 (their switch is hidden). |
+| `BuildPolicy.hpp` | Build version and independent audio policies: general playback on, block-editor cues off, tutorial cues off since 1.0.3 (their switch is hidden). |
 | `Branding.hpp` | Load the original embedded PNG, set the SDL window icon and render the welcome logo. |
 | `resources.rc` | Windows executable icon, embedded logo and version metadata. |
 
@@ -76,6 +77,8 @@ stay compatible with the shared implementation.
 | `tests/PublicWorkflow.cpp` | Actual app-level create/compose/undo/reopen/export/protection flow using generated images and a hidden native render context. |
 | `tests/PublicMatrix.hpp` | Image-input modes, all component roles, native-target package matrix, block/code roundtrips and optional real-installation display checks. |
 | `tests/PublicMediaCases.hpp` | Media catalog/provider/Unicode checks, import protection, typed assignment, usage persistence and packaged-resource preflight/ZIP regressions. A private 65-second WAV fixture exercises full-length audition, loop boundaries, A–B, speed/balance, asynchronous stop and song independence. |
+| `tests/SaveSafetyCases.hpp` | Three-engine save protection: colliding note names, embedded ownership, legacy saves, changed and imported looks, multiple pending recoveries and preserving the active session. |
+| `tests/PublicSpriteShapeCases.hpp` | All twelve figures: distinct geometry/raster output, labels, new-layer placement, clipping, crisp pixel edges, thickness, undo/redo, per-figure settings, arrow outline and layer limits. |
 | `test-engines.ps1` | Copy explicitly selected native engines into private `.qa/`, run workflow tests and prepare their QA mod. Originals remain unchanged. |
 | `prepare-game-mods.ps1` | Install generated skin/type exports and a base-song QA chart into those isolated copies only. Game media never enters releases. |
 | `capture-demo.ps1` | Capture the native UI with an explicitly selected base-game installation and isolated preferences for README images. |

@@ -1,6 +1,6 @@
 # Note Lab · FML Tool — guía avanzada
 
-Edición para la build 1.0.3, revisada el 6 de octubre de 2026.
+Edición para la build 1.0.4a, revisada el 7 de octubre de 2026.
 
 Esta guía explica el flujo completo: abrir fuentes, inspeccionar recursos,
 crear notas y HUD, combinar hojas, distribuir tipos en charts, definir
@@ -8,10 +8,12 @@ comportamientos con bloques, editar código y exportar paquetes para un motor.
 No requiere conexión a internet. Conserva este Markdown junto a la carpeta
 `images/` para ver las capturas.
 
-Las imágenes muestran **la aplicación real con el juego base de V-Slice o
-Psych cargado**. No son maquetas ni ilustraciones generadas por IA. Los archivos del juego
-no se incluyen en la distribución; debes usar tu instalación.
+Las capturas muestran **Note Lab con el juego base de V-Slice o Psych cargado**.
+Los archivos del juego no se incluyen en la distribución; debes usar tu
+instalación.
 Las etiquetas pueden aparecer en inglés o español según el idioma elegido.
+
+También está disponible la [guía avanzada en inglés](GUIDE_ADVANCED_EN.md).
 
 ## Índice
 
@@ -54,14 +56,23 @@ Las etiquetas pueden aparecer en inglés o español según el idioma elegido.
 37. [Dibujo editable y PNG final](#37-dibujo-editable-y-png-final)
 38. [Scripts a bloques y programas reutilizables](#38-scripts-a-bloques-y-programas-reutilizables)
 39. [Efectos, canciones y música](#39-efectos-canciones-y-música)
-40. [Comprobaciones específicas de la 1.0.2](#40-comprobaciones-específicas-de-la-102)
+40. [Comprobaciones específicas por formato](#40-comprobaciones-específicas-por-formato)
 41. [Empezar a dibujar y lienzo libre](#41-empezar-a-dibujar-y-lienzo-libre)
+42. [Tus notas en el mod, patrones y volver a misiones](#42-tus-notas-en-el-mod-patrones-y-volver-a-misiones)
 
-Si vienes de la 1.0.2, empieza por el capítulo 41; también cambian los
-capítulos 17, 18, 34 y 35. Si vienes de la 1.0.1, lee los capítulos 34–41.
+Si vienes de la 1.0.4, empieza por los capítulos 36 y 42. Si vienes de la
+1.0.3, empieza por el capítulo 42; también cambian los
+capítulos 7, 17, 19, 24 y 34. Si vienes de la 1.0.2, lee además el capítulo 41
+(y cambian el 18 y el 35). Si vienes de la 1.0.1, lee los capítulos 34–42.
 Para crear sin una plantilla impuesta, combina la importación avanzada (11–13)
 con el editor por capas (35–37) o un lienzo libre (41). Para crear una nota
 completa, empieza por el capítulo 17.
+
+La 1.0.4a añade las doce figuras y sus controles (capítulo 36), además de
+corregir el guardado y la recuperación de sesiones. El capítulo 42
+explica la protección de nombres de nota, los cambios visuales pendientes y
+cómo recuperar una sesión sin sobrescribir la actual. El selector de figuras
+tiene una captura nueva; se conservan las anteriores donde la pantalla no cambió.
 
 ## 1. Qué hace Note Lab y qué no
 
@@ -176,7 +187,8 @@ no es un backup de las carpetas externas.
 ## 7. Preview y canciones
 
 Sin una canción, la preview utiliza un patrón de prueba. Sirve para comprobar
-legibilidad y piezas, pero no representa la densidad de tu chart.
+legibilidad y piezas, pero no representa la densidad de tu chart. Hay siete de
+serie y puedes hacer los tuyos en una cuadrícula (capítulo 42).
 
 Selecciona canción y dificultad para probar sus notas. Revisa ambos lados,
 jugador o rival; alterna downscroll y prueba sostenidos y acordes. La
@@ -448,8 +460,9 @@ sonido de acierto y bot. Primero abre una fuente a la que asociar el tipo.
 Elige **Bloques** o **Solo código** en sus tarjetas; **Solo código** comienza
 con una plantilla de eventos del motor. El aspecto también se elige con
 tarjetas: como las normales, pintarla, tus imágenes o dibujarla.
-El tipo existe en el proyecto hasta que exportes su definición y lo uses en
-un chart; crearlo no escribe dentro del mod.
+Crearlo no escribe dentro del mod: el tipo vive en el proyecto hasta que
+pulses **Guardar en el mod** (capítulo 42) o exportes su definición, y lo uses
+en un chart.
 
 ![Asistente de nota custom con el juego base cargado](images/new-note-base-es.png)
 
@@ -461,8 +474,10 @@ queda guardada. Si la creas desde **+** en Bloques, vas directo a sus bloques.
 
 ![La nota creada y sus siguientes pasos](images/new-note-ready-es.png)
 
-Cada fila de **Tus notas** tiene botones para editarla, darle aspecto y
-configurar su bot sin pasar otra vez por el asistente.
+Un clic en una nota de **Tus notas** enseña su vista general (aspecto,
+comportamiento, si está en el mod y su código). Cada fila tiene además botones
+para editarla, darle aspecto y configurar su bot sin pasar otra vez por el
+asistente.
 
 Define por separado:
 
@@ -481,8 +496,9 @@ usar únicamente reglas o scripts.
 **Mis notas / Your notes** separa los tipos creados en Note Lab. El aspecto
 puede pintarse, importarse o dibujarse. Su editor de dibujo solo muestra la
 nota, el cuerpo y el final de sostenido: no cambia los receptores del HUD.
-Guardar el código conserva el trabajo en el proyecto; no basta con copiarlo
-al portapapeles. Para convertir un script existente, consulta el capítulo 38.
+**Guardar** la escribe en el mod con sus bloques dentro de su script
+(capítulo 42); no basta con copiar el código al portapapeles. Para convertir un
+script existente, consulta el capítulo 38.
 
 ## 18. Trabajar con bloques
 
@@ -517,14 +533,16 @@ Debajo del selector de tipo, una segunda fila trabaja con la nota abierta:
 
 | Botón | Qué hace |
 | --- | --- |
-| **Guardar** | Guarda el proyecto con la nota (como Ctrl+S). |
+| **Guardar** | Guarda la nota en la carpeta del mod abierto, con sus bloques y aspecto. El primer guardado muestra los archivos; ZIP y juego base no son destinos editables. Ctrl+S guarda el proyecto por separado. |
 | **Guardar como** ▾ | Otra nota con otro nombre, un programa `.nlblocks`, su código en una carpeta o el proyecto en otro archivo. |
 | **Pasar a código** ▾ | Convierte esta nota en solo código (Ctrl+Z lo deshace) o crea una copia en código y deja esta en bloques. |
 | **Pasar a bloques** | En una nota de solo código, convierte lo reconocido (capítulo 38). |
 | **Aspecto** ▾ / **Bot** | Su aspecto y su bot, sin salir de Bloques. |
 
-El indicador **Cambios sin guardar** / **Guardado** dice si el proyecto ya
-tiene lo último. El selector **Bloques / Código / Los dos** tiene iconos.
+El indicador distingue **guardada en el mod**, **cambios sin guardar en el mod**,
+**aún sin guardar en el mod** y **script editado a mano**. Guardar el proyecto
+no equivale a guardar esa nota en el mod. El selector **Bloques / Código / Los
+dos** tiene iconos.
 
 ## 19. Imagen, sonido, vídeo y screamer
 
@@ -542,10 +560,11 @@ de imagen no acepta un sonido, ni una de vídeo acepta un PNG.
 **Cover / Cubrir** llena la pantalla y puede recortar bordes.
 **Stretch / Estirar** llena el área deformando las proporciones.
 
-El botón **Añadir screamer…**, al pie del lateral de Recursos, crea una pila de acierto
-y su bloque. Selecciona la imagen; después abre la ranura de sonido y
-asigna el OGG. No hay un screamer completo mientras una de esas dos ranuras
-esté vacía.
+Para un screamer, encaja el bloque **screamer imagen … sonido …** (categoría
+Cámara) en una pila de acierto. Selecciona la imagen; después abre la ranura de
+sonido y asigna el OGG. No hay un screamer completo mientras una de esas dos
+ranuras esté vacía. (Desde la 1.0.4 ya no está el botón **Añadir screamer…**
+del lateral de Recursos; el bloque sigue igual.)
 
 Empieza con una duración corta, volumen moderado y una espera suficiente.
 Cada bloque reutiliza su overlay y su temporizador en lugar de acumular
@@ -680,7 +699,9 @@ automáticamente.
 
 Abre la canción/dificultad y ve a **Distribute / Distribuir**.
 Añade tipos y elige porcentaje o cantidad exacta. El reparto utiliza una
-semilla para obtener resultados reproducibles.
+semilla para obtener resultados reproducibles. También funciona en el patrón de
+prueba, para probar tus notas sin canción; un patrón no se guarda como chart
+(capítulo 42).
 
 Revisa el número de candidatas y de notas realmente colocadas. Un porcentaje
 se calcula sobre las candidatas que pasan los filtros, no siempre sobre
@@ -801,12 +822,14 @@ La prueba completa requiere el motor real:
 7. Revisa logs por recursos ausentes o APIs no disponibles.
 8. Prueba los vídeos con el codec y la versión que vas a distribuir.
 
-La QA de esta entrega distingue la matriz automatizada de las pruebas
-jugadas registradas en Psych 1.0.4, Codename 1.0.1 y V-Slice 0.8.6: HUD,
-nota custom, sostenidos y determinados bloques. Psych ya no figura como
-pendiente de primera prueba en juego. **Esto no certifica todos los bloques
-multimedia ni cualquier versión de los motores.** Consulta
-[RELEASE_CHECKS.md](RELEASE_CHECKS.md) para el alcance y las evidencias.
+Las pruebas automatizadas de esta entrega se describen por separado de las
+partidas registradas el 5 de octubre de 2026 en Psych 1.0.4, Codename 1.0.1 y
+V-Slice 0.8.6. Esas partidas comprobaron ejemplos de HUD, notas custom,
+sostenidos y algunos bloques; no se repitieron para la 1.0.4a.
+**No certifican todos los bloques multimedia ni cualquier versión de los
+motores.** El informe de la entrega
+(`docs/RELEASE_CHECKS.md`, en el ZIP de Developer) recoge el alcance y las
+evidencias.
 
 ## 30. Ejercicios completos
 
@@ -892,12 +915,13 @@ recargar fuentes. No dependas de que deshacer sobreviva a una sesión nueva.
 
 ## 33. Desarrollo y límites actuales
 
-La entrega Developer contiene la app de Note Lab, su núcleo de edición y
+La entrega Developer contiene las fuentes de Note Lab, su núcleo de edición y
 las dependencias necesarias. No es la suite completa de FML.
 
 `src/` contiene UI; `core/` contiene modelos, lectores, creación, bloques,
 persistencia, recursos y export; `support/` contiene las dependencias
-reutilizadas. MODULES.md documenta archivos y scripts. FML_SYNC_MAP.json
+reutilizadas. `docs/MODULES.md` (en el ZIP de Developer) documenta archivos
+y scripts. FML_SYNC_MAP.json
 permite revisar y trasladar cambios a sus rutas compartidas.
 
 Para compilar se necesitan herramientas C++ x64 de Visual Studio y Windows
@@ -919,14 +943,15 @@ Límites que no se deben anunciar como resueltos:
 - Vídeo integrado en el editor y compatibilidad con cualquier codec/build.
 - Análisis automático de todas las dependencias de archivos custom.
 
-Para los resultados de pruebas y pendientes concretos, consulta
-[RELEASE_CHECKS.md](RELEASE_CHECKS.md).
-Para propuestas futuras, consulta [NEXT_IMPROVEMENTS_ES.md](NEXT_IMPROVEMENTS_ES.md).
+Los resultados de pruebas y los pendientes concretos están en
+`docs/RELEASE_CHECKS.md`, y las propuestas futuras en
+`docs/NEXT_IMPROVEMENTS_ES.md`; los dos van en el ZIP de Developer.
 
 ## 34. Tutoriales y modo foco
 
 Los tutoriales trabajan sobre la interfaz real. **Primeros pasos** tiene
-12 misiones: abrir, elegir, cargar una canción, jugar, crear y exportar.
+12 misiones: abrir, elegir, cargar una canción, jugar, crear y guardar tu
+nota en el mod.
 Las guías de zona cubren bloques, Crear HUD, creador custom/ranking, recursos,
 exportación y editor de sprites. No es necesario terminar una para usar la app.
 
@@ -940,10 +965,13 @@ exportación y editor de sprites. No es necesario terminar una para usar la app.
    hasta completar el objetivo. Arrastrar oculta temporalmente la indicación.
 5. Puedes saltar una misión o la guía. El menú permite continuar, repetir
    desde el principio o volver a habilitar las ofertas de cada zona.
+6. Una misión pasada, hecha o saltada, se puede volver a hacer desde **Todas
+   las misiones** o sus casillas de progreso (capítulo 42).
 
 Primeros pasos tiene prioridad sobre las guías de zona para evitar varias
-indicaciones a la vez. Al repetir, una tarea ya resuelta no se cuenta como
-nueva: sigue la indicación de repetirla o usa **Siguiente misión**.
+indicaciones a la vez. Lo que ya tenías hecho al empezar se salta solo. Al
+repetir, una tarea ya resuelta no se cuenta como nueva: vuelve a hacerla o usa
+**Siguiente misión**.
 El tutorial de jugar pide tres aciertos y devuelve después la preview a auto.
 
 La guía de bloques monta tres notas básicas: daño, curación y suerte.
@@ -951,7 +979,7 @@ Su mini vídeo muestra bloques reales encajándose. La paleta del tutorial
 presenta los necesarios para la misión; **Ver todos** devuelve la paleta
 completa. Si la nota actual contiene tu trabajo, la guía pide una nueva.
 
-En la 1.0.3 los tutoriales no suenan: sus avisos de misión, final y oferta van
+Desde la 1.0.3 los tutoriales no suenan: sus avisos de misión, final y oferta van
 silenciados, su interruptor no aparece y los paquetes no traen archivos de
 sonido. Los sonidos de interacción del editor de bloques siguen apagados; las
 canciones y la audición de archivos conservan su audio.
@@ -1015,6 +1043,24 @@ Con figuras arrastra sus extremos; puedes configurar relleno y contorno.
 El bote admite tolerancia; el cuentagotas copia un color. Los presets se crean
 en otra capa, dentro de la selección o del hueco elegido, sin sustituir todo
 lo que habías pintado.
+
+Al elegir **Figura** (U), la barra superior muestra el selector con miniaturas:
+rectángulo, rectángulo redondeado, elipse/círculo, triángulo, rombo, estrella,
+flecha, corazón, pentágono, hexágono, trapecio y cruz. No cambia las plantillas
+de notas ni los presets de HUD.
+
+![Selector de doce figuras, con el juego base cargado](images/shape-picker-en.png)
+
+Elige una figura y arrastra para definir su tamaño. **Colocar figura** la
+inserta centrada en la selección o el hueco elegido, en una capa nueva que
+puedes mover o deshacer. **Rellena** activa el interior; **Grosor** ajusta el
+contorno entre 0 y 32 píxeles. La flecha conserva su contorno habitual y su
+control de grosor queda desactivado.
+
+**Pixel art** dibuja la figura sin suavizado en los bordes; si el lienzo ya es
+pixel art, se aplica automáticamente. Cada figura recuerda sus ajustes de
+grosor y pixel art mientras trabajas en el editor. Los dibujos guardados
+conservan los píxeles, no figuras vectoriales que puedan reeditarse después.
 
 | Atajo del editor | Acción |
 | --- | --- |
@@ -1166,7 +1212,7 @@ Elegir una fila no la reproduce. Inspección y reproducción son explícitas;
 puedes abrir la carpeta origen con sus acciones contextuales. Busca la ruta
 si dos recursos tienen nombres parecidos y comprueba qué proveedor ganó.
 
-La audición ya no corta a los 30 segundos. **Loop** repite el archivo; al
+La audición permite recorrer el archivo completo. **Loop** repite el archivo; al
 activar A–B repite solo ese rango. Velocidad, balance y volumen afectan esa
 escucha, no el archivo original ni los valores de un bloque de sonido.
 **Stop** vuelve al inicio o al punto A y cancela un arranque pendiente.
@@ -1175,7 +1221,7 @@ Una voz o instrumental de la biblioteca no pasa a ser automáticamente la
 canción activa de Preview; cárgala desde el selector de canciones. El audio
 de la canción y la audición del recurso son transportes distintos.
 
-## 40. Comprobaciones específicas de la 1.0.2
+## 40. Comprobaciones específicas por formato
 
 Antes de entregar tu mod:
 
@@ -1196,8 +1242,9 @@ Antes de entregar tu mod:
 6. Prueba el paquete final en la versión del motor que distribuirás y guarda
    las advertencias junto al resultado. Un PNG correcto no valida el script.
 
-El [informe de la entrega](RELEASE_CHECKS.md) enumera los resultados actuales,
-capturas revisadas, prueba del ZIP público y compilación del Developer extraído.
+El informe de la entrega (`docs/RELEASE_CHECKS.md`, en el ZIP de Developer)
+enumera los resultados actuales, capturas revisadas, prueba del ZIP público y
+compilación del Developer extraído.
 
 ## 41. Empezar a dibujar y lienzo libre
 
@@ -1229,3 +1276,99 @@ libre desde **+ Abrir… → Lienzo libre (tú eliges el tamaño)…** sin perde
 En el editor del aspecto de una nota, la columna derecha enseña la nota con su
 tramo y final de sostenido **En el juego** y las cuatro direcciones, sin
 desplazarte. El mapa de la hoja solo aparece al dibujar todo el HUD.
+
+## 42. Tus notas en el mod, patrones y volver a misiones
+
+Novedades de la 1.0.4.
+
+### Guardar una nota en el mod
+
+Una nota que creas en Note Lab vive en el proyecto hasta que la guardas en su
+mod. **Guardar en el mod**, en su vista general (un clic en **Tus notas**), o
+**Guardar** en Bloques la escribe en la carpeta del mod abierto, donde la busca su motor:
+Psych `custom_notetypes/`, Codename `data/notes/`, V-Slice `scripts/notekinds/`,
+más su aspecto si tiene uno propio. La primera vez enseña los archivos y dónde
+van; después guarda sin preguntar.
+
+![Guardar en el mod: lo que se escribe y dónde](images/save-in-mod-es.png)
+
+Sus bloques van dentro de su propio script, en un comentario que el juego
+ignora. Al abrir el mod otra vez —sin proyecto, incluso en otro PC— la nota
+vuelve a **Tus notas** con sus bloques y la marca **en el mod**.
+
+![El mod abierto otra vez, sin proyecto: la nota vuelve con sus bloques](images/own-note-in-mod-es.png)
+
+- Nunca escribe en un ZIP ni en la instalación del juego base: descomprime el
+  mod o abre uno de la carpeta `mods` del juego.
+- Un archivo que ya estaba en el mod y no escribió Note Lab solo se reemplaza
+  si marcas **Reemplazarlos**.
+- Si el script se edita a mano después (en cualquier parte, también debajo del
+  comentario), la nota sale como **script editado a mano**: elige **Pasar su
+  script a bloques** o **Usar los bloques guardados**. Guardarla otra vez pide
+  permiso para reemplazar el script editado.
+- Al salir con notas que aún no están en su mod, Note Lab lo dice y ofrece
+  **Guardarlas en el mod**. Si sales sin guardar el proyecto, guarda una copia:
+  al abrir otra vez, **Tu última sesión no se guardó** ofrece **Recuperarla**.
+
+La vista general de una nota tuya enseña su aspecto, lo que hace, si está en el
+mod y su código para el motor del mod abierto, con **Copiar código**, **Pasar a
+bloques** (si es solo código) e **Ir a la primera** cuando la usa la canción o el
+patrón cargado: la vista previa se abre ya, un poco antes de la nota.
+
+### Protección de guardado y recuperación en la 1.0.4a
+
+- Dos nombres distintos no pueden generar los mismos archivos de nota. Por
+  ejemplo, `Fire Note` y `Fire-Note`, o cambios solo de mayúsculas, pueden
+  coincidir al exportarse: elige un nombre realmente diferente. Esta protección
+  se aplica también al guardar notas de proyectos anteriores.
+- El comentario de bloques guarda la identidad de la nota. Si un archivo
+  existente pertenece a otra nota, no se considera propio ni se sobrescribe
+  automáticamente. Los comentarios antiguos siguen siendo compatibles; un
+  archivo sin identidad reconocida requiere permiso explícito para reemplazarse.
+- Cambiar escala, animaciones, recortes u otras propiedades del aspecto marca
+  la nota como **con cambios**, incluso si conserva el mismo ID de aspecto. Al
+  guardar, se incluye también el aspecto de una nota importada.
+- Una sesión pendiente de recuperación se conserva separada de la copia de la
+  sesión actual. Abrir otro mod o guardar otro proyecto no la elimina.
+  **Archivo → Recuperar sesión anterior…** permite recuperarla con un mod ya
+  abierto y pide confirmación si hay cambios sin guardar. Recuperar una anterior
+  conserva también la sesión desplazada; descartar una recuperación no borra
+  la copia de la sesión activa.
+
+### Patrones de prueba
+
+Sin canción, la vista previa toca un patrón de prueba. Arriba de la lista de
+canciones hay siete: Básico, Escalera, Repeticiones, Acordes, Sostenidos
+largos, Ráfaga y Aleatorio. **Editar patrón…** abre una cuadrícula: arriba el
+rival, abajo el jugador, una columna por semicorchea, de 1 a 16 compases.
+
+![El editor de patrones partiendo de «Sostenidos largos»](images/pattern-editor-es.png)
+
+Un clic pone una nota y otro clic la quita; arrastrar a la derecha la hace
+sostenida (hasta la siguiente nota de su carril); el clic derecho también la
+quita. **Partir de…** copia uno de serie y **Vaciar** deja la cuadrícula en
+blanco. **Guardar y ponerlo** lo guarda con su nombre en tus preferencias
+(hasta 32) y lo pone en la vista previa, al BPM de la vista previa. Abrir uno
+tuyo lo edita; **Borrar patrón** lo quita.
+
+**Distribuir** también funciona en un patrón de prueba, con los tipos del mod
+elegido: sirve para ver y jugar tus notas sin canción. Un patrón no es un
+chart: no hay **Guardar distribución como chart…**. Cambiar el BPM mantiene el
+reparto; cambiar de patrón lo quita, como cambiar de canción.
+
+### Volver a una misión del tutorial
+
+Al empezar o continuar un tutorial, lo que ya tenías hecho se salta solo (y se
+dice). En **Todas las misiones**, las que se pasaron sin hacerlas salen como
+**saltadas**. Un clic en cualquier misión pasada —hecha o saltada— vuelve a
+ella: deja de contar, el tutorial te lleva a donde se hace (la pestaña, la vista
+o el paso de **Crear HUD**) y nada de tu trabajo cambia. En las guías de zona,
+lo mismo con las casillas de progreso.
+
+![Todas las misiones: las saltadas se pueden hacer](images/tutorial-back-es.png)
+
+Si lo que pide la misión ya se cumple (por ejemplo, ya hay una canción
+cargada), cuenta al hacerlo otra vez —otra canción, otro estilo— o con
+**Siguiente misión**. **Abre un mod** es la única que no se repite mientras haya
+un mod abierto. Las misiones que piden crear una nota te guían dentro de la
+ventana **Nueva nota custom**: el nombre, **Crear nota** y luego sus bloques.

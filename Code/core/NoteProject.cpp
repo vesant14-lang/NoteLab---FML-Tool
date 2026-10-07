@@ -1,9 +1,11 @@
 #include "NoteProject.hpp"
 
+#include "../support/core/Hash.hpp"
 #include "../third_party/json.hpp"
 
 #include <algorithm>
 #include <atomic>
+#include <cctype>
 #include <chrono>
 #include <cmath>
 #include <fstream>
@@ -374,6 +376,160 @@ std::string writeProgram(const BlockProgram& program) { return programJson(progr
 BlockProgram readProgram(const std::string& text) {
     const json doc = json::parse(text, nullptr, false, true);
     return programFrom(doc);
+}
+
+// ------------------------------------------- los bloques dentro del script --
+
+namespace {
+
+const char* const kEmbedMarker = "notelab-blocks 1";
+constexpr size_t kEmbedLimit = 8u * 1024u * 1024u;
+
+const char* const kBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+std::string base64Encode(const std::string& in) {
+    std::string out;
+    out.reserve((in.size() + 2) / 3 * 4);
+    for (size_t i = 0; i < in.size(); i += 3) {
+        const unsigned a = static_cast<unsigned char>(in[i]);
+        const unsigned b = i + 1 < in.size() ? static_cast<unsigned char>(in[i + 1]) : 0u;
+        const unsigned c = i + 2 < in.size() ? static_cast<unsigned char>(in[i + 2]) : 0u;
+        const unsigned triple = (a << 16) | (b << 8) | c;
+        out += kBase64[(triple >> 18) & 63];
+        out += kBase64[(triple >> 12) & 63];
+        out += i + 1 < in.size() ? kBase64[(triple >> 6) & 63] : '=';
+        out += i + 2 < in.size() ? kBase64[triple & 63] : '=';
+    }
+    return out;
+}
+
+std::optional<std::string> base64Decode(const std::string& in) {
+    auto value = [](char c) -> int {
+        if (c >= 'A' && c <= 'Z') return c - 'A';
+        if (c >= 'a' && c <= 'z') return c - 'a' + 26;
+        if (c >= '0' && c <= '9') return c - '0' + 52;
+        if (c == '+') return 62;
+        if (c == '/') return 63;
+        return -1;
+    };
+    if (in.size() % 4 != 0) return std::nullopt;
+    std::string out;
+    out.reserve(in.size() / 4 * 3);
+    for (size_t i = 0; i < in.size(); i += 4) {
+        int v[4];
+        int pad = 0;
+        for (int k = 0; k < 4; ++k) {
+            const char c = in[i + static_cast<size_t>(k)];
+            if (c == '=') {
+                if (i + 4 != in.size() || k < 2) return std::nullopt;
+                v[k] = 0;
+                ++pad;
+            } else {
+                if (pad > 0) return std::nullopt;
+                v[k] = value(c);
+                if (v[k] < 0) return std::nullopt;
+            }
+        }
+        const unsigned triple = (static_cast<unsigned>(v[0]) << 18) | (static_cast<unsigned>(v[1]) << 12) |
+                                (static_cast<unsigned>(v[2]) << 6) | static_cast<unsigned>(v[3]);
+        out += static_cast<char>((triple >> 16) & 0xFF);
+        if (pad < 2) out += static_cast<char>((triple >> 8) & 0xFF);
+        if (pad < 1) out += static_cast<char>(triple & 0xFF);
+    }
+    return out;
+}
+
+// El script sin el comentario de Note Lab, con saltos de linea de Unix y sin
+// espacios al final: lo que se compara para saber si se edito a mano (un
+// editor que guarda en CRLF no cuenta como cambio).
+std::string normalizedBody(const std::string& text) {
+    std::string out;
+    out.reserve(text.size());
+    for (size_t i = 0; i < text.size(); ++i) {
+        if (text[i] == '\r' && i + 1 < text.size() && text[i + 1] == '\n') continue;
+        out += text[i];
+    }
+    while (!out.empty() && (out.back() == '\n' || out.back() == '\r' || out.back() == ' ' || out.back() == '\t')) out.pop_back();
+    return out;
+}
+
+bool luaScript(const std::string& path) {
+    std::string lower = path;
+    for (char& c : lower) c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+    return lower.size() >= 4 && lower.compare(lower.size() - 4, 4, ".lua") == 0;
+}
+
+}  // namespace
+
+EmbeddedProgram readEmbeddedProgram(const std::string& script) {
+    EmbeddedProgram out;
+    if (script.size() > kEmbedLimit) return out;
+    const size_t marker = script.rfind(kEmbedMarker);
+    if (marker == std::string::npos) return out;
+    // El comentario empieza en la misma linea que la marca: «--[[ » o «/* ».
+    const size_t lineStart = script.rfind('\n', marker);
+    const size_t start = lineStart == std::string::npos ? 0 : lineStart + 1;
+    std::string opener = script.substr(start, marker - start);
+    while (!opener.empty() && (opener.back() == ' ' || opener.back() == '\t')) opener.pop_back();
+    if (opener != "--[[" && opener != "/*") return out;
+    std::string hash, data;
+    bool closed = false;
+    size_t after = script.size();   // lo que sigue a la linea que cierra el comentario
+    size_t at = script.find('\n', marker);
+    while (at != std::string::npos && at + 1 <= script.size()) {
+        const size_t next = script.find('\n', at + 1);
+        std::string line = script.substr(at + 1, next == std::string::npos ? std::string::npos : next - at - 1);
+        if (!line.empty() && line.back() == '\r') line.pop_back();
+        if (line == "]]" || line == "*/") {
+            closed = true;
+            after = next == std::string::npos ? script.size() : next + 1;
+            break;
+        }
+        if (line.rfind("hash ", 0) == 0) hash = line.substr(5);
+        else if (line.rfind("data ", 0) == 0) data += line.substr(5);
+        if (next == std::string::npos) break;
+        at = next;
+    }
+    if (!closed || data.empty()) return out;
+    const std::optional<std::string> decoded = base64Decode(data);
+    if (!decoded) return out;
+    const json payload = json::parse(*decoded, nullptr, false, true);
+    if (!payload.is_object() || !payload.contains("program")) return out;
+    out.program = programFrom(payload["program"]);
+    if (payload.contains("noteType") && payload["noteType"].is_string()) out.noteType = payload["noteType"].get<std::string>();
+    if (payload.contains("files") && payload["files"].is_array())
+        for (const json& file : payload["files"])
+            if (file.is_string() && out.files.size() < 256) out.files.push_back(file.get<std::string>());
+    // El codigo es todo lo de fuera del comentario: lo de antes y lo que se
+    // anadiera despues (una funcion al final tambien es editarlo a mano).
+    out.body = script.substr(0, start) + script.substr(after);
+    out.found = true;
+    out.edited = hash != fml::sha256Hex(normalizedBody(out.body));
+    return out;
+}
+
+std::string embedProgramInScript(const std::string& script, const std::string& scriptPath,
+                                 const BlockProgram& program, const std::vector<std::string>& files,
+                                 const std::string& noteType) {
+    // Si ya llevaba un comentario de Note Lab, se cambia (no se apilan).
+    const EmbeddedProgram previous = readEmbeddedProgram(script);
+    const std::string body = normalizedBody(previous.found ? previous.body : script);
+    json payload;
+    payload["program"] = programJson(program);
+    payload["files"] = files;
+    const std::string owner = noteType.empty() ? previous.noteType : noteType;
+    if (!owner.empty()) payload["noteType"] = owner;
+    const std::string data = base64Encode(payload.dump());
+    const bool lua = luaScript(scriptPath);
+    std::string out = body + "\n\n";
+    out += lua ? "--[[ " : "/* ";
+    out += kEmbedMarker;
+    out += "\nMade with Note Lab (Funkin Mod Lab). These lines keep this note's blocks so Note Lab can open\n"
+           "it again with them. The game ignores this comment; edit the code above, not these lines.\n";
+    out += "hash " + fml::sha256Hex(body) + "\n";
+    for (size_t i = 0; i < data.size(); i += 96) out += "data " + data.substr(i, 96) + "\n";
+    out += lua ? "]]\n" : "*/\n";
+    return out;
 }
 
 std::string writeStyle(const NoteStyle& style) {

@@ -162,6 +162,32 @@ bool splashAnchor(Engine engine, float boxW, float boxH, float& x, float& y);
 // sostenidos. `lengthMs` devuelve cuanto dura antes de repetirse.
 std::vector<PreviewNote> demoPattern(double bpm, double& lengthMs);
 
+// Mas patrones de prueba (pedido del autor, 6 oct 2026): 0 basico (el de
+// arriba), 1 escalera, 2 repeticiones (jacks), 3 acordes, 4 sostenidos largos,
+// 5 rafaga (stream) y 6 aleatorio (con su semilla). Cuatro compases, los dos
+// lados se turnan.
+constexpr int kDemoKinds = 7;
+std::vector<PreviewNote> demoPatternOf(int kind, double bpm, double& lengthMs, std::uint32_t seed = 1);
+
+// Un patron propio, hecho en una cuadricula de semicorcheas (cuatro por
+// tiempo, dieciseis por compas) y guardado en las preferencias.
+struct PatternNote {
+    int side = 1;      // 0 rival, 1 jugador
+    int lane = 0;      // 0..3
+    int step = 0;      // semicorchea desde el principio
+    int hold = 0;      // largo del sostenido en semicorcheas (0 = nota sin sostenido)
+};
+struct CustomPattern {
+    std::string name;
+    int bars = 4;      // 1..16
+    std::vector<PatternNote> notes;
+};
+constexpr int kPatternMaxBars = 16;
+constexpr size_t kPatternMaxNotes = 4096;
+std::vector<PreviewNote> customPatternNotes(const CustomPattern& pattern, double bpm, double& lengthMs);
+// Un patron de serie pasado a la cuadricula, para editarlo como propio.
+CustomPattern patternFromNotes(const std::vector<PreviewNote>& notes, double bpm, int bars);
+
 // Autojuego perfecto: cada nota de un lado automatico que llega a su tiempo
 // entre `fromMs` y `toMs` enciende el confirm y, en la linea del jugador, la
 // salpicadura y el popup. Las que el bot deja pasar siguen de largo.

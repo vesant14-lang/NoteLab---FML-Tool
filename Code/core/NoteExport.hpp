@@ -94,6 +94,7 @@ struct ExportIo {
 // y el sufijo del archivo coinciden en Psych 0.7 y 1.0 (Note.hx:429,
 // NoteSplash.hx:366).
 std::string exportName(const std::string& text);
+bool noteExportNamesCollide(const std::string& first, const std::string& second);
 
 ExportPackage buildExport(const NoteStyle& style, const ExportOptions& options, const ExportIo& io);
 
