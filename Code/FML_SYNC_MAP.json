@@ -1,6 +1,6 @@
 {
   "product": "Note Lab",
-  "version": "1.0.3",
+  "version": "1.0.4a",
   "purpose": "Path mapping for reviewing changes against the FML snapshot. Include paths differ in this standalone layout.",
   "files": [
     {
@@ -21,6 +21,11 @@
     {
       "standalone": "src/NewNote.hpp",
       "fml": "NoteLab/src/NewNote.hpp",
+      "baseline_sha256": null
+    },
+    {
+      "standalone": "src/ModSave.hpp",
+      "fml": "NoteLab/src/ModSave.hpp",
       "baseline_sha256": null
     },
     {

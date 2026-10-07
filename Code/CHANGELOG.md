@@ -1,9 +1,108 @@
 # Note Lab change log
 
+## 1.0.4a — Paint and save protection · 2026-10-07
+
+- A pending recovery is kept separately from the current autosave. Opening
+  another mod, saving a different project or restarting does not overwrite it.
+  Recovering an older session also preserves the displaced current session.
+  Recovery remains available from File after opening a mod and asks before
+  replacing unsaved work.
+- Custom-note creation and Save in mod reject names that map to another
+  note's export files, including spaces versus hyphens, case-only aliases and
+  Windows filename sanitization. Saved block comments now carry their note's
+  identity, so an old or stale catalog cannot silently replace another note's
+  script. Existing block comments remain readable; an unidentified existing
+  file still requires explicit replacement approval.
+- A note's saved-state comparison includes its complete visual definition,
+  not just its look ID. Editing scale, animation settings, frame definitions
+  or other look properties marks the note as changed and includes it in the
+  save prompt. Looks imported from a mod are also included when saving.
+- Regression coverage includes the three target formats, legacy saved notes,
+  owner mismatches, visual changes and multiple pending recovery copies.
+- Paint's Shape tool starts with a rectangle and offers 12 labeled thumbnails:
+  rectangle, rounded rectangle, ellipse/circle, triangle, diamond, star, arrow,
+  heart, pentagon, hexagon, trapezoid and cross. Draw by dragging or use Place
+  shape to insert one in the selection/chosen box on a new, undoable layer.
+  Outline thickness and pixel-art rendering are configurable per shape; the
+  note arrow keeps its standard outline. Existing note and HUD presets remain.
+- Documentation corrects Save in Blocks versus project saving, the new-note
+  Ready flow, explicit resource copying and recovery. README, guides and
+  developer notes remove outdated workflow claims and internal process text.
+- The full advanced guide is included in English and Spanish, with 42 chapters,
+  offline screenshots and instructions for the new shape controls.
+
+## 1.0.4 — public release · 2026-10-07
+
+This release adds in-mod note saving, editable demo patterns and tutorial
+navigation. Export formats are unchanged from 1.0.3.
+
+- Your notes live in your mod. «Save» on a note writes it into the open mod
+  folder, where its engine looks for it (Psych `custom_notetypes/`, Codename
+  `data/notes/`, V-Slice `scripts/notekinds/`, plus its own look), and its
+  blocks travel inside the same script as a comment the game ignores: open the
+  mod again — without a project, even on another PC — and the note comes back
+  with its blocks. Before writing, the files are listed; an existing file is
+  only replaced if you say so. Never into a ZIP or the base game install. If
+  the script was edited by hand afterwards — anywhere in the file, also below
+  Note Lab's comment — Note Lab says so and offers to turn the script into
+  blocks or to use the saved blocks again, instead of using stale ones silently;
+  saving over the edited script asks first. Its overview still lists what the
+  saved blocks did.
+- Closing with a note not saved in the mod offers
+  «Save in the mod», and a copy of the session is kept so the next start can
+  offer «Recover the last session».
+- Clicking one of your own custom notes (in «Your notes») shows its overview —
+  look, behavior, whether it is saved in the mod, and its script in the code of
+  the open mod's engine — instead of jumping to Blocks, the same as the mod's
+  own notes already did. «To blocks» sits in the script section, next to «Copy
+  code».
+- «Go to the first» switches to the Preview at once, a little before the note,
+  so you see it arrive.
+- «Add screamer…» is gone from the resources panel (the screamer block stays).
+- Tutorial: starting or continuing a tutorial jumps over the missions you have
+  already done (a mod open, a song loaded…) and starts at the first one left;
+  «Open a mod» cannot be skipped; missions that ask for a new note guide you
+  inside the «New custom note» window (its name, then «Create note», then its
+  blocks) — before, any open window switched the guide off. «Save your note in
+  the mod» replaces the export mission of First steps and of the blocks guide,
+  and points inside the «Save in the mod» window. «Repeat from the start» asks
+  for everything again except what it needs to begin (a mod open and a style
+  picked). «Scatter custom notes» now points straight at «Populate with this
+  mod's custom notes»: it works on the demo pattern too.
+- Tutorial: any mission already passed — done, skipped by hand or jumped over
+  at the start — can be done again: click it in «All missions», or click its box
+  in the progress bar of any tutorial. Note Lab takes you to where it is done
+  (the tab, the view or the step of «Create HUD») and nothing of your work
+  changes. Missions passed without doing them show as «skipped». If what a
+  mission asks is already true, it counts when you do it again (another style,
+  another song…) or with «Next mission». «Open a mod» is the only one that is
+  not repeated while a mod is open.
+- Preview: seven demo patterns instead of one — Basic, Stairs, Jacks, Chords,
+  Long holds, Stream and Random — picked from the song list, which now reads
+  «Pattern: <name>». «Edit pattern…» opens a grid (opponent above, player
+  below, one column per sixteenth, 1 to 16 bars): click a box to put a note,
+  click it again to take it away, drag right to make it a hold; «Start from…»
+  copies a built-in pattern. Your patterns (up to 32) are saved by name in your
+  preferences, appear in the same list, play at the preview's BPM and can be
+  edited or deleted later.
+- The demo pattern counts as a chart for «Distribute»: the mod's custom notes
+  can be scattered in it with the same package, seed and filters, the preview
+  and «Play» use them, and changing the BPM keeps what was scattered (another
+  pattern clears it, like another song). It is only for trying them, so there
+  is no «Save distribution as chart…» on a demo pattern; a song of the mod can
+  still be picked right there. A note's overview says «In 6 notes of the demo
+  pattern «Basic»» and «Go to the first» works there too.
+- Packages (already applied to the 1.0.3 delivery, same executable): the
+  development log stays out of both ZIPs, and the public ZIP keeps the guide,
+  the quickstart and their screenshots but not the developer notes (core sync,
+  module map, future ideas, release checks), which stay in the Developer ZIP.
+  The README, the quickstart and the guide no longer link to files a package
+  does not carry: they name the developer notes as part of the Developer ZIP.
+
 ## 1.0.3 — public release · 2026-10-06
 
-Comfort and flow, after the author tried 1.0.2. The note-editing core and the
-exporters are the same as in 1.0.2; the changes are in the app's windows.
+UI and workflow improvements. The note-editing core and export formats are
+unchanged from 1.0.2.
 
 - Sprite editor: before drawing, «How do you want to start?» offers the
   template with a box for each piece, a free canvas of the size you choose
@@ -40,7 +139,7 @@ exporters are the same as in 1.0.2; the changes are in the app's windows.
 - The text ranking creator («Ranking with text», File → Create ranking HUD ·
   Text) is hidden in this build, with its help topic; ranking from images is
   unchanged.
-- Tutorial sounds are silenced in this build, at the author's request: no
+- Tutorial sounds are silenced in this build: no
   mission, ending or offer sound plays, their «Sounds» switch is hidden (in the
   tutorial window and the Tutorial menu) and neither package contains sound
   files. Block editor sounds stay off as before; songs and file audition keep
@@ -208,13 +307,13 @@ exporters are the same as in 1.0.2; the changes are in the app's windows.
 - Tested in the three engines with real play (Psych 1.0.4, Codename 1.0.1,
   V-Slice 0.8.6): a Create HUD style (Psych RGB template painted; drawn pieces
   in Codename and V-Slice), a custom note with blocks («Hey!», flash and shake)
-  and a drawn look, and Bopeebo with that note distributed. The test mods are
-  kept in `capturas-tutorial-notelab/mods-de-prueba`.
+  and a drawn look, and Bopeebo with that note distributed. Test mods are not
+  included in the release packages.
 - New command-line flags for these tests: `--save-chart=<file>` saves the
   distribution as a separate chart (like «Save as a separate chart…»), and with
   `--commit-create` the requested `--save-project` and `--export-to` wait until
   the creation is confirmed.
-- Tutorial, after the author's first run:
+- Tutorial improvements:
   - «First steps» now leads the way: while it runs, the blocks guide and the
     zone tutorials wait instead of interrupting it, and it keeps guiding inside
     the blocks editor (new mission «Snap your first blocks»).

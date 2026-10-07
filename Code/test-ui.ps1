@@ -14,10 +14,17 @@ try {
     $env:TMP = $env:TEMP
     New-Item -ItemType Directory -Path $env:LOCALAPPDATA,$env:TEMP -Force | Out-Null
     $noteChecks = 0
-    foreach ($noteCase in @(@('code','heal,poison',0), @('blocks','hey',0), @('resources','heal,hey',0), @('resources-compact','heal,hey',0,'1024x768'), @('audition','heal,hey',0), @('audition-compact','heal,hey',0,'1024x768'), @('score','hey',0), @('tutorial','hey',0), @('notes','hey',0), @('code-empty','',1))) {
+    foreach ($noteCase in @(@('code','heal,poison',0), @('blocks','hey',0), @('resources','heal,hey',0), @('resources-compact','heal,hey',0,'1024x768'), @('audition','heal,hey',0), @('audition-compact','heal,hey',0,'1024x768'), @('score','hey',0), @('tutorial','hey',0), @('notes','hey',0), @('modsave','',0), @('patterns','',0), @('code-empty','',1))) {
         $noteMode = if ($noteCase[0] -eq 'code-empty') { 'code' } elseif ($noteCase[0] -eq 'resources-compact') { 'resources' } elseif ($noteCase[0] -eq 'audition-compact') { 'audition' } else { $noteCase[0] }
         $noteSize = if ($noteCase.Count -gt 3) { $noteCase[3] } else { '1480x900' }
-        $noteArgs = @('"--root=' + (Join-Path $noteFixture.FullName 'first') + '"','--no-auto-base','--lang=en',('--window=' + $noteSize),'--block-type=NoteLabQATest',('--ui-test=' + $noteMode))
+        $noteRoot = Join-Path $noteFixture.FullName 'first'
+        if ($noteCase[0] -eq 'modsave') {
+            # «Guardar en el mod» escribe en el mod: una copia nueva en cada pasada.
+            $noteRoot = Join-Path $noteUiRoot '.qa/ui-modsave-mod'
+            if (Test-Path -LiteralPath $noteRoot) { Remove-Item -LiteralPath $noteRoot -Recurse -Force }
+            Copy-Item -LiteralPath (Join-Path $noteFixture.FullName 'first') -Destination $noteRoot -Recurse
+        }
+        $noteArgs = @('"--root=' + $noteRoot + '"','--no-auto-base','--lang=en',('--window=' + $noteSize),'--block-type=NoteLabQATest',('--ui-test=' + $noteMode))
         if ($noteCase[1]) { $noteArgs += '--presets=' + $noteCase[1] }
         $noteLog = Join-Path $noteUiRoot ('.qa/ui-' + $noteCase[0] + '.log')
         $noteErrorLog = Join-Path $noteUiRoot ('.qa/ui-' + $noteCase[0] + '-stderr.log')

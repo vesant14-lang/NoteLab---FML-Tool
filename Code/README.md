@@ -7,12 +7,12 @@
 **Your notes. Your HUD. Your custom-note behavior.**
 
 ![Windows x64](https://img.shields.io/badge/Windows-x64-0078D4?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.0.3-9B7BF5?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.0.4a-9B7BF5?style=flat-square)
 ![License MIT](https://img.shields.io/badge/code-MIT-38B16B?style=flat-square)
 ![Languages](https://img.shields.io/badge/UI-English%20%2F%20Español-C58DEF?style=flat-square)
 ![Engines](https://img.shields.io/badge/Codename-Psych%20%7C%20V--Slice-F29A54?style=flat-square)
 
-[Get started](#get-started) · [Advanced guide](docs/GUIDE_ADVANCED_ES.md) · [Screenshots](#the-base-game-inside-note-lab) · [Blocks & code](#blocks-and-code) · [Build](#build-and-test)
+[Get started](#get-started) · [Advanced guide · EN](docs/GUIDE_ADVANCED_EN.md) · [Guía avanzada · ES](docs/GUIDE_ADVANCED_ES.md) · [Screenshots](#the-base-game-inside-note-lab) · [Blocks & code](#blocks-and-code) · [Build](#build-and-test)
 
 </div>
 
@@ -27,7 +27,7 @@ an engine-specific package with installation instructions.
 **Songs and imported-file audition have audio.** Only the block editor's
 interaction cues are permanently muted, with no enable switch. Music volume,
 pause and seeking remain available; OGG import/export is unchanged.
-Tutorial sounds are silenced in 1.0.3: nothing chimes and no sound files ship.
+Tutorial cues are also muted; their sound files are not included.
 
 ![Note Lab welcome](docs/images/welcome-en.png)
 
@@ -44,12 +44,70 @@ No Python, Haxe, Node.js or Visual Studio installation is needed to run it.
 3. Use **Combine styles / HUD** to take only notes, receptors, splashes,
    covers, ranking, countdown or sounds from another style. Combine several
    sources in successive steps without replacing the unselected groups.
-4. Save your project with **Ctrl+S**. Export a folder or ZIP for the chosen
-   engine with **Ctrl+E**, then follow the generated installation guide.
+4. Save your project with **Ctrl+S**. Your own custom notes go into the mod
+   itself with **Save in the mod**, blocks included. Export a folder or ZIP for
+   the chosen engine with **Ctrl+E**, then follow the generated installation guide.
 
 New to the app? Accept **First steps**, or choose a guide from **Tutorial**.
-Missions complete as you work in the real editor. You can skip, resume or
-repeat them; they do not write into your mod or replace your existing blocks.
+Missions complete as you work in the editor. You can skip, resume or repeat
+them. Guidance does not write into your mod automatically; saving a note or
+copying a resource still requires your action.
+
+## New in 1.0.4a
+
+This maintenance release protects pending session recovery from a newer
+autosave, rejects custom-note names that would overwrite another note's files,
+and includes visual edits when checking whether a note needs saving.
+Recovery is also available from **File** after opening a mod. Existing projects
+and saved block comments remain readable.
+
+Paint's **Shape** tool offers 12 thumbnail choices: rectangle, rounded
+rectangle, ellipse/circle, triangle, diamond, star, arrow, heart, pentagon,
+hexagon, trapezoid and cross. Drag to draw, or use **Place shape** to insert it
+in the selection or chosen box on a new layer. Each shape remembers its
+outline thickness and pixel-art option while editing; the note arrow retains
+its standard outline.
+
+## New in 1.0.4
+
+### Your notes live in your mod
+
+![Save in the mod: what is written and where](docs/images/save-in-mod-es.png)
+
+**Save in the mod** writes your custom note into the open mod folder, where its
+engine looks for it (Psych `custom_notetypes/`, Codename `data/notes/`, V-Slice
+`scripts/notekinds/`, plus its own look). Its blocks travel inside the same
+script, in a comment the game ignores: open the mod again — no project needed,
+even on another PC — and the note comes back with its blocks. The first save
+lists every file, and a file Note Lab did not write is only replaced if you say
+so. If the script is edited by hand later, Note Lab says so and lets you turn it
+into blocks or keep the saved ones. Quitting with notes not yet in their mod
+offers **Save them in the mod**, and the next start can recover the last session.
+
+### Demo patterns you can edit
+
+![Pattern editor, starting from «Long holds»](docs/images/pattern-editor-es.png)
+
+Seven demo patterns — Basic, Stairs, Jacks, Chords, Long holds, Stream and
+Random — sit at the top of the song list. **Edit pattern…** opens a grid of
+sixteenths to make your own (1 to 16 bars, holds by dragging), saved by name in
+your preferences. **Distribute** works on a demo pattern too, to try custom
+notes without a song; a demo pattern is never saved as a chart.
+
+### Back to any tutorial mission
+
+![All missions: the skipped ones can be done again](docs/images/tutorial-back-es.png)
+
+Missions you already passed — done, skipped, or jumped over because you had
+them done — can be done again from **All missions** or the progress boxes. Note
+Lab takes you to where the mission happens without touching your work; **Open a
+mod** is the only one not repeated while a mod is open. Missions that need a new
+note now guide you inside the **New custom note** window.
+
+Also: clicking one of **Your notes** shows its overview (look, behavior, whether
+it is in the mod, and its code for the mod's engine); **Go to the first** opens
+the Preview right away; **Add screamer…** left the resources panel (the block
+stays).
 
 ## New in 1.0.3
 
@@ -115,7 +173,8 @@ also assembles an existing style into one PNG/XML pair.
 **Custom notes → Catalog → Create custom note** collects its name, blocks or
 code-only behavior, starting preset, look, hit sound and preview bot. A custom
 note can keep the normal note graphics. **Your notes** distinguishes your work
-from the mod's types; the assistant opens the relevant editor after creation.
+from the mod's types. After creation, the **Ready** page lets you choose the
+next step; creating from **+** in Blocks goes straight to that note's blocks.
 
 The blocks **…** menu can import the selected type's script into blocks, save
 or open `.nlblocks` programs, and save generated code in an engine-layout folder.
@@ -134,13 +193,13 @@ blocks guide demonstrates snapping actual blocks. Sound resources now separate
 
 This release also fixes Psych 1.0 chart-side detection, differently painted
 pieces sharing a Sparrow region, and one-frame V-Slice hit receptors getting
-stuck. See the [complete changelog](CHANGELOG.md) and the
-[release verification](docs/RELEASE_CHECKS.md) for scope and test evidence.
+stuck. See the [complete changelog](CHANGELOG.md); the release verification
+(`docs/RELEASE_CHECKS.md`) comes with the Developer ZIP.
 
 ## The base game inside Note Lab
 
-These are real captures of Note Lab with locally installed base-game assets,
-not mockups or AI artwork. The game files are **not included** in either ZIP.
+These screenshots show Note Lab with locally installed base-game assets.
+The game files are **not included** in either ZIP.
 
 ### Preview a chart and its HUD
 
@@ -202,7 +261,7 @@ and missing dependencies readable without shrinking the editor.
 - Independent notes, receptors, holds, splashes and HUD files. Partial note
   sheets retain base receptors in preview rather than making them disappear.
 - Image-based ranking, countdown and named sound effects.
-  No AI-generated artwork or bundled game assets.
+  Game assets must be supplied from your own installation.
 - Custom-note blocks, presets, editable generated code, syntax colors,
   comments, bounded code-to-block synchronization and undo/redo.
 - Deterministic custom-note distributions, exact quantities, filters and
@@ -216,13 +275,10 @@ and missing dependencies readable without shrinking the editor.
 
 ## Important limits
 
-Song playback and imported-file audition are enabled. Only block-editor cues
-are disabled; old preferences cannot reactivate them. The earlier all-audio
-mute was broader than intended and is corrected in this revised delivery.
-Legacy zero-volume preferences are restored to 80% once. After that migration,
-your selected volume, including a deliberate mute, is preserved.
-Tutorial sounds are silenced in this build and their switch is hidden; muting
-those and the block-editor cues does not mute songs or file audition.
+Song playback and imported-file audition are enabled. Block-editor and tutorial
+cues are muted and have no enable switch. This does not mute songs, file
+audition or sounds exported by your blocks. Playback volume, including a
+deliberate mute, is saved in your preferences.
 
 Preview is **not the game engine**: it does not execute arbitrary mod scripts
 or simulate every exported block. The interface reports coverage. An export
@@ -238,9 +294,11 @@ Projects reference source mods and cached imported/generated media. They are
 source mods block opening without discarding the current project; missing
 imported media is reported. Keep the project and its source/cache together.
 
-Mod assets are read-only. Chart replacement is a separate explicit operation;
-ZIPs and base-game charts are protected. Back up your mods before installing
-an exported package. Note Lab does not redistribute the assets you open.
+Opening and previewing a source does not modify its assets. Writing into a mod
+folder requires an explicit operation: **Save in the mod**, resource import
+with **Copy to this mod**, or chart replacement. ZIPs and base-game files are
+protected. Back up your mods before installing an exported package. Opening
+assets does not grant permission to redistribute them.
 
 ## Build and test
 
@@ -265,12 +323,15 @@ The native UI test requires an OpenGL-capable desktop and the workflow fixtures;
 CI builds the app and core tests, but does not claim graphics/UI coverage.
 UI checks include the new-note assistant and its «Ready» page, sprite
 persistence, the paint start screen, a free canvas sent to the sheet, the
-Create note HUD steps and the tutorial flow.
+Create note HUD steps, the tutorial flow (including going back to a mission),
+saving a note into a copied mod and opening it again without a project, and the
+pattern editor.
 
 `test-engines.ps1 -Codename <folder> -Psych <folder> -VSlice <folder>` prepares
 isolated game copies, leaving the originals untouched. Native launch is a
 separate step: a successful copy or file re-read is not proof that a song ran.
-Read the [verification report](docs/RELEASE_CHECKS.md) for the actual results.
+The verification report, `docs/RELEASE_CHECKS.md` in the Developer ZIP, has the
+actual results.
 
 The developer kit is a **standalone Note Lab repository**. It does not include
 the FML app, Atlas, the character/stage tools, the Psych importer or other labs.
@@ -280,16 +341,16 @@ ZIP/files, rendering and audio interfaces). These dependencies are not another
 application and cannot be removed without breaking the build. Existing `fml`
 C++ namespaces are retained for compatibility, not because the suite is bundled.
 Run `powershell -File test-layout.ps1` to check the standalone source layout.
-`FML_SYNC_MAP.json` maps each source file to its original shared path so that
+`FML_SYNC_MAP.json` maps shared files to their original FML paths so that
 improvements can be reviewed and moved back into FML without guessing.
 The supplied logo is embedded into the executable and included
 in `assets/`. `prepare-assets.ps1` rebuilds the multi-size Windows icon from
 that original PNG; it does not generate new artwork.
 
-Read [architecture and module map](docs/MODULES.md),
-[shared-core synchronization](docs/CORE_SYNC.md),
-[public-build verification](docs/RELEASE_CHECKS.md),
-[change log](CHANGELOG.md) and [development log](BITACORA.md).
+The Developer ZIP also carries the architecture and module map
+(`docs/MODULES.md`), the shared-core synchronization notes (`docs/CORE_SYNC.md`)
+and the public-build verification (`docs/RELEASE_CHECKS.md`). See also the
+[change log](CHANGELOG.md).
 
 ## License and contributing
 
@@ -306,12 +367,23 @@ La interfaz arranca en inglés; puedes cambiar a español y guardar la preferenc
 Las canciones y la audición de archivos tienen audio. Sólo los sonidos de
 interacción del editor de bloques quedan apagados, sin opción para activarlos.
 Volumen, pausa, desplazamiento e importación/exportación OGG siguen disponibles.
-La 1.0.3 añade la pantalla «¿Cómo quieres empezar?» del editor de sprites
+La 1.0.4a protege las sesiones pendientes de recuperación, evita que dos nombres
+de nota sobrescriban los mismos archivos y detecta los cambios visuales al guardar.
+Figura ofrece 12 formas con miniaturas, colocación en una capa nueva y controles
+de grosor y pixel art por figura; la flecha conserva su contorno habitual.
+La 1.0.4 guarda tus notas dentro del mod, con sus bloques en su propio script
+(vuelven al abrir el mod sin proyecto), avisa al salir y recupera la sesión,
+trae siete patrones de prueba y un editor de patrones, deja usar «Distribuir»
+en el patrón de prueba y permite volver a cualquier misión del tutorial (menos
+«Abre un mod» con un mod abierto).
+La 1.0.3 añadió la pantalla «¿Cómo quieres empezar?» del editor de sprites
 (plantilla, lienzo libre que se pasa a la hoja, lienzo de una pieza), controles
 nuevos al pintar, el asistente de notas con página «Lista», Guardar / Guardar
 como / Pasar a código en Bloques y Crear HUD por pasos. Los sonidos del
-tutorial van silenciados en esta build y no se entregan archivos de sonido.
+tutorial siguen silenciados y no se entregan archivos de sonido.
 La 1.0.2 añadió tutoriales, editor por capas, piezas de HUD dibujadas,
 `.nlsprite`, PNG final y conversión limitada de scripts a bloques.
-Consulta el [inicio rápido en español](docs/QUICKSTART_ES.md), los
-[resultados de pruebas](docs/RELEASE_CHECKS.md) y la [bitácora](BITACORA.md).
+Consulta el [inicio rápido en español](docs/QUICKSTART_ES.md) y la
+[guía avanzada en español](docs/GUIDE_ADVANCED_ES.md) o
+[en inglés](docs/GUIDE_ADVANCED_EN.md); los resultados de pruebas
+(`docs/RELEASE_CHECKS.md`) van en el ZIP de Developer.

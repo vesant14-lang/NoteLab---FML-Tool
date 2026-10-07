@@ -1,0 +1,12 @@
+/build/
+/*.log
+/*.obj
+/*.exe
+/*.dll
+/.qa/
+/output/
+/release/
+/local/
+*.user
+*.suo
+imgui.ini

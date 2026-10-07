@@ -1,11 +1,11 @@
 ﻿param(
     [string]$Destination = (Join-Path (Split-Path $PSScriptRoot -Parent) 'Delivery'),
-    [string]$Version = '1.0.3',
+    [string]$Version = '1.0.4a',
     [switch]$DeveloperOnly
 )
 
 $ErrorActionPreference = 'Stop'
-if ($Version -notmatch '^\d+\.\d+\.\d+([-.][a-zA-Z0-9]+)*$') { throw 'Invalid release version.' }
+if ($Version -notmatch '^\d+\.\d+\.\d+[a-zA-Z]?([-.][a-zA-Z0-9]+)*$') { throw 'Invalid release version.' }
 $noteKitRoot = [IO.Path]::GetFullPath($PSScriptRoot)
 & (Join-Path $noteKitRoot 'test-layout.ps1')
 $noteReleaseRoot = [IO.Path]::GetFullPath($Destination)
@@ -26,13 +26,14 @@ function Add-NoteTree([string]$Relative) {
     if (-not (Test-Path -LiteralPath $noteTree -PathType Container)) { throw "Missing required directory: $Relative" }
     foreach ($noteFile in Get-ChildItem -LiteralPath $noteTree -File -Recurse) {
         $noteRelative = $noteFile.FullName.Substring($noteKitRoot.Length + 1)
-        # 1.0.3: the tutorial sounds are silenced and their files stay out of both packages.
+        # Since 1.0.3 the tutorial sounds are silenced and their files stay out of both packages.
         if ($noteRelative.Replace('\', '/') -like 'assets/sounds/*') { continue }
         Add-NoteFile $noteRelative
     }
 }
 
-foreach ($noteFile in @('README.md','LICENSE','THIRD_PARTY_NOTICES.md','CONTRIBUTING.md','SECURITY.md','CHANGELOG.md','BITACORA.md','.gitignore','.gitattributes','setup_msvc.bat','build.bat','test.bat','test-workflow.bat','test-ui.ps1','test-layout.ps1','FML_SYNC_MAP.json','test-engines.ps1','prepare-game-mods.ps1','prepare-assets.ps1','capture-demo.ps1','package-release.ps1','build-project.bat','resources.rc')) { Add-NoteFile $noteFile }
+# The development log (BITACORA.md) stays with the author: neither package carries it.
+foreach ($noteFile in @('README.md','LICENSE','THIRD_PARTY_NOTICES.md','CONTRIBUTING.md','SECURITY.md','CHANGELOG.md','.gitignore','.gitattributes','setup_msvc.bat','build.bat','test.bat','test-workflow.bat','test-ui.ps1','test-layout.ps1','FML_SYNC_MAP.json','test-engines.ps1','prepare-game-mods.ps1','prepare-assets.ps1','capture-demo.ps1','package-release.ps1','build-project.bat','resources.rc')) { Add-NoteFile $noteFile }
 foreach ($noteTree in @('assets','docs','licenses','tests','.github','src','third_party/imgui','third_party/miniz','third_party/SDL3-3.4.14/include')) { Add-NoteTree $noteTree }
 foreach ($noteFile in @('third_party/json.hpp','third_party/miniaudio.h','third_party/pugixml.cpp','third_party/pugixml.hpp','third_party/pugiconfig.hpp','third_party/stb_image.h','third_party/stb_image_write.h','third_party/stb_vorbis.c','third_party/SDL3-3.4.14/lib/x64/SDL3.lib','third_party/SDL3-3.4.14/lib/x64/SDL3.dll','third_party/SDL3-3.4.14/LICENSE.txt','tests/CoreRegression.cpp','support/audio/stb_vorbis_impl.c','support/core/Hash.cpp','support/io/Vfs.cpp','support/runtime/Scene.cpp','support/audio/AudioEngine.cpp')) { Add-NoteFile $noteFile }
 foreach ($noteModule in @('SparrowAtlas','AnimateAtlas','LegacyChart','CodenameChart','SongMeta','ChartExchange')) { Add-NoteFile "support/formats/$noteModule.cpp" }
@@ -77,8 +78,12 @@ foreach ($noteFile in ($noteFiles | Sort-Object)) { Copy-NoteFile $noteFile $not
 if (-not $DeveloperOnly) {
     Copy-NoteFile 'build/app/NoteLab.exe' $notePublicRoot 'NoteLab.exe'
     Copy-NoteFile 'build/app/SDL3.dll' $notePublicRoot 'SDL3.dll'
-    foreach ($noteFile in @('README.md','LICENSE','THIRD_PARTY_NOTICES.md','CHANGELOG.md','BITACORA.md','CONTRIBUTING.md','SECURITY.md')) { Copy-NoteFile $noteFile $notePublicRoot }
+    foreach ($noteFile in @('README.md','LICENSE','THIRD_PARTY_NOTICES.md','CHANGELOG.md','CONTRIBUTING.md','SECURITY.md')) { Copy-NoteFile $noteFile $notePublicRoot }
+    # Developer-only notes (the core sync, the module map, future ideas and the release checks) stay out of
+    # the public package; its guides and their screenshots go in.
+    $noteDeveloperDocs = @('docs/CORE_SYNC.md','docs/MODULES.md','docs/NEXT_IMPROVEMENTS_ES.md','docs/RELEASE_CHECKS.md')
     foreach ($noteFile in $noteFiles) {
+        if ($noteDeveloperDocs -contains $noteFile) { continue }
         if ($noteFile -like 'licenses/*' -or $noteFile -like 'docs/*' -or $noteFile -like 'assets/*') { Copy-NoteFile $noteFile $notePublicRoot }
     }
 }
@@ -102,7 +107,8 @@ foreach ($notePackage in $notePackages) {
     $noteArchive = [IO.Compression.ZipFile]::OpenRead($noteArchivePath)
     try {
         foreach ($noteEntry in $noteArchive.Entries) {
-            if ($noteEntry.FullName -match '(^|/)(\.qa|build|backups|settings|mods|sounds|tools)(/|$)|\.(obj|log|pdb|fmlnote|wav)$') { throw "Private/build file in release: $($noteEntry.FullName)" }
+            if ($noteEntry.FullName -match '(^|/)(\.qa|build|backups|settings|mods|sounds|tools)(/|$)|\.(obj|log|pdb|fmlnote|wav)$|(^|/)BITACORA\.md$') { throw "Private/build file in release: $($noteEntry.FullName)" }
+            if ($notePackage[0] -eq 'Public' -and $noteEntry.FullName -match '^docs/(CORE_SYNC|MODULES|NEXT_IMPROVEMENTS_ES|RELEASE_CHECKS)\.md$') { throw "Developer-only documentation in the public package: $($noteEntry.FullName)" }
         }
     } finally { $noteArchive.Dispose() }
 }
